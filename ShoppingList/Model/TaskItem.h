@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface taskItem : NSObject
+@interface TaskItem : NSObject
 
 //
 //@property (nonatomic, weak) NSString *name;

@@ -10,13 +10,13 @@ import UIKit
 
 class DemoData: NSObject {
   
-  var firstTask = taskItem(title: "Apples", andAmount: 5)
-  var secondTask = taskItem(title: "Oranges", andAmount: 1)
-  var thirdTask = taskItem(title: "Milk 2% 4L", andAmount: 1)
-  var fourthTask = taskItem(title: "Can of Black Paint", andAmount: 15)
-  var fifthTask = taskItem(title: "Shiny New Car", andAmount: 1)
+  var firstTask = TaskItem(title: "Apples", andAmount: 5)
+  var secondTask = TaskItem(title: "Oranges", andAmount: 1)
+  var thirdTask = TaskItem(title: "Milk 2% 4L", andAmount: 1)
+  var fourthTask = TaskItem(title: "Can of Black Paint", andAmount: 15)
+  var fifthTask = TaskItem(title: "Shiny New Car", andAmount: 1)
   
-  var demoData: [taskItem]
+  var demoData: [TaskItem]
   
   override init() {
     demoData = [firstTask, secondTask, thirdTask, fourthTask, fifthTask]
