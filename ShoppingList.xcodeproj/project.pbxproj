@@ -16,6 +16,7 @@
 		7DB8F98E212DE21100315B5B /* ShoppingListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB8F98D212DE21100315B5B /* ShoppingListUITests.swift */; };
 		7DB8F99E212DE54700315B5B /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB8F99D212DE54700315B5B /* ItemCollectionViewCell.swift */; };
 		7DB8F9A1212DE7E100315B5B /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB8F9A0212DE7E100315B5B /* Item.swift */; };
+		F112073A212DEA4F00AAB353 /* taskItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F1120739212DEA4F00AAB353 /* taskItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,9 @@
 		7DB8F98F212DE21100315B5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DB8F99D212DE54700315B5B /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		7DB8F9A0212DE7E100315B5B /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		F1120737212DEA4F00AAB353 /* ShoppingList-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ShoppingList-Bridging-Header.h"; sourceTree = "<group>"; };
+		F1120738212DEA4F00AAB353 /* taskItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = taskItem.h; sourceTree = "<group>"; };
+		F1120739212DEA4F00AAB353 /* taskItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = taskItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +163,9 @@
 			isa = PBXGroup;
 			children = (
 				7DB8F9A0212DE7E100315B5B /* Item.swift */,
+				F1120738212DEA4F00AAB353 /* taskItem.h */,
+				F1120739212DEA4F00AAB353 /* taskItem.m */,
+				F1120737212DEA4F00AAB353 /* ShoppingList-Bridging-Header.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -231,6 +238,7 @@
 				TargetAttributes = {
 					7DB8F969212DE21000315B5B = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 					};
 					7DB8F97D212DE21100315B5B = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -298,6 +306,7 @@
 				7DB8F99E212DE54700315B5B /* ItemCollectionViewCell.swift in Sources */,
 				7DB8F970212DE21000315B5B /* ViewController.swift in Sources */,
 				7DB8F96E212DE21000315B5B /* AppDelegate.swift in Sources */,
+				F112073A212DEA4F00AAB353 /* taskItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,6 +479,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ShoppingList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -478,6 +488,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Feeny-Corp.ShoppingList";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ShoppingList/Model/ShoppingList-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -487,6 +499,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ShoppingList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -495,6 +508,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Feeny-Corp.ShoppingList";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ShoppingList/Model/ShoppingList-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
