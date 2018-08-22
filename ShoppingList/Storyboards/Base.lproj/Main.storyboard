@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -34,7 +35,35 @@
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yCy-S6-3BL">
+                                                    <rect key="frame" x="40" y="8" width="316" height="34"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCC-TJ-ln8">
+                                                    <rect key="frame" x="20" y="8" width="20" height="34"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="20" id="LTp-K1-MMn"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="XCC-TJ-ln8" firstAttribute="centerY" secondItem="U8c-Xp-Q1H" secondAttribute="centerY" id="Cc1-tv-85q"/>
+                                            <constraint firstItem="XCC-TJ-ln8" firstAttribute="leading" secondItem="U8c-Xp-Q1H" secondAttribute="leadingMargin" constant="12" id="Jni-oO-tAX"/>
+                                            <constraint firstItem="yCy-S6-3BL" firstAttribute="top" secondItem="U8c-Xp-Q1H" secondAttribute="topMargin" id="Lhf-bM-ypG"/>
+                                            <constraint firstItem="yCy-S6-3BL" firstAttribute="leading" secondItem="XCC-TJ-ln8" secondAttribute="trailing" id="aEV-Y3-DwD"/>
+                                            <constraint firstItem="XCC-TJ-ln8" firstAttribute="top" secondItem="U8c-Xp-Q1H" secondAttribute="topMargin" id="eKR-QE-gQ3"/>
+                                            <constraint firstItem="yCy-S6-3BL" firstAttribute="centerY" secondItem="U8c-Xp-Q1H" secondAttribute="centerY" id="emV-Nc-PF7"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="XCC-TJ-ln8" secondAttribute="bottom" id="qbp-GR-ibd"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="yCy-S6-3BL" secondAttribute="trailing" constant="11" id="rIV-ob-f4b"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="yCy-S6-3BL" secondAttribute="bottom" id="xC0-Z0-Zib"/>
+                                        </constraints>
                                         <size key="customSize" width="375" height="50"/>
                                     </collectionViewCell>
                                 </cells>
@@ -71,7 +100,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-137" y="44"/>
+            <point key="canvasLocation" x="-278" y="45"/>
+        </scene>
+        <!--Add Object View Controller-->
+        <scene sceneID="2EB-P3-Tvb">
+            <objects>
+                <viewController id="lHN-EU-67o" customClass="AddObjectViewController" customModule="ShoppingList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="USy-XS-nyR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="MbP-QZ-Lwf"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qzc-Yb-JAt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="356" y="45"/>
         </scene>
     </scenes>
 </document>
