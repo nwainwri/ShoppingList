@@ -16,7 +16,7 @@
 //@property (nonatomic) BOOL status;
 
 
-- (instancetype)initWithTitle:(NSString *)title andAmount:(int)amount;
+- (nonnull instancetype)initWithTitle:(NSString *)title andAmount:(int)amount;
 
 
 @end
