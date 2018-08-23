@@ -40,8 +40,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemTableViewCell", for: indexPath) as! ItemTableViewCell
-        cell.amountUILabel.text = "\(demoData.demoData[indexPath.row].amount)"
-        cell.itemUILabel.text = demoData.demoData[indexPath.row].title
+        cell.amountUILabel.text = "\(demoData.currentItemsArray[indexPath.row].amount)"
+        cell.itemUILabel.text = demoData.currentItemsArray[indexPath.row].title
                 return cell
     }
 
@@ -55,8 +55,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
 }
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        let movedObject = demoData.demoData[sourceIndexPath.row]
-        demoData.demoData.remove(at: sourceIndexPath.row)
-        demoData.demoData.insert(movedObject, at: destinationIndexPath.row)
+        let movedObject = demoData.currentItemsArray[sourceIndexPath.row]
+        demoData.currentItemsArray.remove(at: sourceIndexPath.row)
+        demoData.currentItemsArray.insert(movedObject, at: destinationIndexPath.row)
     }
 }
