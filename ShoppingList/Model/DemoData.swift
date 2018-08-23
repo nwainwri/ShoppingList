@@ -9,33 +9,33 @@
 import UIKit
 
 class DemoData: NSObject {
-  
-  //for function operations
-  //
-  
-  
-  
   var firstTask = ListItem(title: "Apples", andAmount: 5)
   var secondTask = ListItem(title: "Oranges", andAmount: 1)
   var thirdTask = ListItem(title: "Milk 2% 4L", andAmount: 1)
   var fourthTask = ListItem(title: "Can of Black Paint", andAmount: 15)
   var fifthTask = ListItem(title: "Shiny New Car", andAmount: 1)
-  
   var demoData: [ListItem]
   
   override init() {
     demoData = [firstTask, secondTask, thirdTask, fourthTask, fifthTask]
     super.init()
-    
   }
-  
-  
-  
   
   func addListItem(titleString: String, newNumber: Int) {
     demoData.append(ListItem(title: titleString, andAmount: Int32(newNumber)))
-    
   }
+  
+  func removeListItem(itemNumber: Int) {
+    demoData.remove(at: itemNumber)
+  }
+  
+  
+  
+  
+  
+  
+  
+  
   
 //  DELETE ONCE TESTED -- DROP INTO VIEW CONTROLLER FOR TESTING
 //  actualTest.addListItem(titleString: "HELLO", newNumber: 45)
