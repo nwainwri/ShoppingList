@@ -39,21 +39,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 cell.itemUILabel.text = "Fish"
                 return cell
     }
-   
-    
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        let demoData = DemoData()
-//        return demoData.demoData.count
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        //let itemCollectionViewCell = ItemCollectionViewCell()
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemCollectionViewCell", for: indexPath) as! ItemCollectionViewCell
-//        cell.amountUILabel.text = "20"
-//        cell.ItemUILabel.text = "Fish"
-//        return cell
-//
-//    }
 
 }
 
