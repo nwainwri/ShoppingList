@@ -8,32 +8,40 @@
 
 import UIKit
 
-class AddObjectViewController: UIViewController {
+
+
+
+// put this in delgator, this screen passes data to main screen
+protocol AddObjectViewControllerDelgate: AnyObject
+{
+  func itemAdded(sentItem: ListItem)
+}
+
+class AddObjectViewController: UIViewController, UITextFieldDelegate
+{
   // OUTLETS HERE / AND OR PROPERTIES
+  
+  weak var delegate:AddObjectViewControllerDelgate?
+  
+  // Swift
   
   @IBOutlet weak var amountOfItemsField: UITextField!
   
   @IBOutlet weak var titleOfItemField: UITextField!
   
- 
+  var itemToPassBack = ListItem()
   
   /// END
     override func viewDidLoad() {
         super.viewDidLoad()
       
-//      need a pass back item... property.
       
-//      var newItemToAdd = ListItem()
-      let testThisDemo = DemoData()
+//      titleOfItemField.returnKeyType = .done
       
-      testThisDemo.currentItemsArray[0].amount = testThisDemo.currentItemsArray[0].amount + 1
+      amountOfItemsField.text = "\(itemToPassBack.amount)"
+      titleOfItemField.text = itemToPassBack.title
       
-//      addToAmountItems.sendActions(for: .touchUpInside) {
-//
-//      }
-      
-//      //call this line one enter pressed on pop up keyboard... HOW
-//      thisTest.addListItem(titleString: titleOfItemField.text!, newNumber: Int(amountOfItemsField.text!)!) // unsafe method; need to unwrap safely
+
 
         // Do any additional setup after loading the view.
     }
@@ -52,25 +60,35 @@ class AddObjectViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+  
+  
   
   @IBAction func addButtonPressed(_ sender: Any) {
-    print("THIS WORKS TO ADD")
-    
+//    print("THIS WORKS TO ADD")
+    itemToPassBack.amount = itemToPassBack.amount + 1
+    amountOfItemsField.text = "\(itemToPassBack.amount)"
   }
   
   @IBAction func subtractButtonPressed(_ sender: Any){
-    print("THIS WORKS TO SUBTRACT")
+//    print("THIS WORKS TO SUBTRACT")
+    itemToPassBack.amount = itemToPassBack.amount - 1
+    amountOfItemsField.text = "\(itemToPassBack.amount)"
   }
   
   
   @IBAction func clearTitleTextButtonPressed(_ sender: Any) {
-    
-    print("CLEAR BUTTON PRESSED")
-    
+    titleOfItemField.text = ""
+//    print("CLEAR BUTTON PRESSED")
   }
   
-  
+  func textFieldShouldReturn(_ textField: UITextField) -> Bool
+  {
+    textField.resignFirstResponder()
+    
+    print("klja;dfkljals;jfakl;j")
+    return true
+  }
+
   
   
   

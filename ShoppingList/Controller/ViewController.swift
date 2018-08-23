@@ -11,8 +11,9 @@ import UIKit
 
 
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AddObjectViewControllerDelgate {
+
+
     @IBOutlet weak var itemUITableView: UITableView!
     
     @IBOutlet weak var editUIButton: UIButton!
@@ -103,4 +104,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             self.editUIButton.setTitle("Done", for: .normal)
         }
     }
+
+    func itemAdded(sentItem: ListItem) {
+    
+  }
+
 }
+
+
+
