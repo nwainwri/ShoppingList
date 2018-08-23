@@ -10,6 +10,13 @@
 
 @interface ListItem : NSObject
 
+
+@property (nonatomic, nonnull) NSString *title;
+@property (nonatomic) int amount;
+
+@property (nonatomic) int priority;
+@property (nonatomic) BOOL status;
+
 //
 //@property (nonatomic, weak) NSString *name;
 //@property (nonatomic) int priority;

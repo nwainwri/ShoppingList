@@ -10,6 +10,11 @@ import UIKit
 
 class DemoData: NSObject {
   
+  //for function operations
+  //
+  
+  
+  
   var firstTask = ListItem(title: "Apples", andAmount: 5)
   var secondTask = ListItem(title: "Oranges", andAmount: 1)
   var thirdTask = ListItem(title: "Milk 2% 4L", andAmount: 1)
@@ -23,6 +28,29 @@ class DemoData: NSObject {
     super.init()
     
   }
+  
+  
+  
+  
+  func addListItem(titleString: String, newNumber: Int) {
+    demoData.append(ListItem(title: titleString, andAmount: Int32(newNumber)))
+    
+  }
+  
+//  DELETE ONCE TESTED -- DROP INTO VIEW CONTROLLER FOR TESTING
+//  actualTest.addListItem(titleString: "HELLO", newNumber: 45)
+//
+//  for item in actualTest.demoData {
+//  print(item.title)
+//  }
+//   STOP DELETEING HERE -- DROP INTO VIEW CONTROLLER FOR TESTING
+  
+  
+  
+  
+  
+  
+  
   
   
   
