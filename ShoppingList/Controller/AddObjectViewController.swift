@@ -15,10 +15,7 @@ class AddObjectViewController: UIViewController {
   
   @IBOutlet weak var titleOfItemField: UITextField!
   
-  @IBOutlet weak var addToAmountItems: UIButton!
-  
-  @IBOutlet weak var subtractFromAmountItems: UIButton!
-  
+ 
   
   /// END
     override func viewDidLoad() {
@@ -26,20 +23,17 @@ class AddObjectViewController: UIViewController {
       
 //      need a pass back item... property.
       
-      let thisTest = DemoData()
+//      var newItemToAdd = ListItem()
+      let testThisDemo = DemoData()
       
-      // need function for reducing amount of items
+      testThisDemo.currentItemsArray[0].amount = testThisDemo.currentItemsArray[0].amount + 1
       
-      // need function for adding to amount of items
+//      addToAmountItems.sendActions(for: .touchUpInside) {
+//
+//      }
       
-      
-      
-      
-      
-      //call this line one enter pressed on pop up keyboard... HOW
-      thisTest.addListItem(titleString: titleOfItemField.text!, newNumber: Int(amountOfItemsField.text!)!) // unsafe method; need to unwrap safely
-      
-    
+//      //call this line one enter pressed on pop up keyboard... HOW
+//      thisTest.addListItem(titleString: titleOfItemField.text!, newNumber: Int(amountOfItemsField.text!)!) // unsafe method; need to unwrap safely
 
         // Do any additional setup after loading the view.
     }
@@ -48,11 +42,6 @@ class AddObjectViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-  
-  
-  
-  
-  
 
     /*
     // MARK: - Navigation
@@ -64,4 +53,35 @@ class AddObjectViewController: UIViewController {
     }
     */
 
+  
+  @IBAction func addButtonPressed(_ sender: Any) {
+    print("THIS WORKS TO ADD")
+    
+  }
+  
+  @IBAction func subtractButtonPressed(_ sender: Any){
+    print("THIS WORKS TO SUBTRACT")
+  }
+  
+  
+  @IBAction func clearTitleTextButtonPressed(_ sender: Any) {
+    
+    print("CLEAR BUTTON PRESSED")
+    
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 }

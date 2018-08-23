@@ -46,6 +46,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <state key="normal" title="+"/>
+                                <connections>
+                                    <action selector="addButtonPressed:" destination="raK-QT-nFu" eventType="touchUpInside" id="Tf9-iX-ept"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oiy-3e-tOK">
                                 <rect key="frame" x="95" y="35" width="30" height="30"/>
@@ -56,6 +59,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="42"/>
                                 <state key="normal" title="-"/>
+                                <connections>
+                                    <action selector="subtractButtonPressed:" destination="raK-QT-nFu" eventType="touchUpInside" id="Wtu-nu-xUk"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Dn-E8-SGK">
                                 <rect key="frame" x="330" y="35" width="30" height="30"/>
@@ -68,6 +74,9 @@
                                 <state key="normal" image="Smaller">
                                     <color key="titleColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="clearTitleTextButtonPressed:" destination="raK-QT-nFu" eventType="touchUpInside" id="YJn-j9-Ps9"/>
+                                </connections>
                             </button>
                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xkP-OV-3kP">
                                 <rect key="frame" x="172" y="26" width="30" height="3"/>
@@ -103,9 +112,7 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="addToAmountItems" destination="hZ9-6R-4jY" id="EEB-8T-7q1"/>
                         <outlet property="amountOfItemsField" destination="WKP-46-uZ3" id="OKx-2o-1aP"/>
-                        <outlet property="subtractFromAmountItems" destination="oiy-3e-tOK" id="uqq-Xc-6bQ"/>
                         <outlet property="titleOfItemField" destination="oi4-13-XzG" id="WsP-ff-Sg8"/>
                     </connections>
                 </viewController>
