@@ -70,9 +70,13 @@
                                         <size key="customSize" width="375" height="50"/>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Fx6-2O-uof"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Phk-O2-ywt"/>
+                                </connections>
                             </collectionView>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wSK-4M-YQ7">
-                                <rect key="frame" x="0.0" y="609" width="375" height="58"/>
+                                <rect key="frame" x="0.0" y="618" width="375" height="49"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="a1q-cw-dfL" kind="embed" identifier="toAddObjectViewController" id="bG1-zc-oGT"/>

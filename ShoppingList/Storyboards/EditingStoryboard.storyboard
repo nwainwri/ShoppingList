@@ -39,29 +39,38 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZ9-6R-4jY">
                                 <rect key="frame" x="15" y="30" width="30" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Zl7-e5-kaY"/>
                                     <constraint firstAttribute="width" constant="30" id="bqn-QN-2zG"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <state key="normal" title="+"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oiy-3e-tOK">
                                 <rect key="frame" x="75" y="30" width="30" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="Ozz-SW-0UC"/>
                                     <constraint firstAttribute="height" constant="30" id="Rdh-Ip-co5"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
                                 <state key="normal" title="-"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Dn-E8-SGK">
                                 <rect key="frame" x="330" y="30" width="30" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="JGh-8C-gTk"/>
                                     <constraint firstAttribute="height" constant="30" id="xzD-GG-hAH"/>
                                 </constraints>
-                                <state key="normal" image="UIBarButtonStop_2x_b0334ee9-f617-46c0-8f05-6a6fd6f223f7"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <state key="normal" image="Smaller">
+                                    <color key="titleColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="oiy-3e-tOK" firstAttribute="centerY" secondItem="hZ9-6R-4jY" secondAttribute="centerY" id="Df7-Ob-8W0"/>
                             <constraint firstItem="oi4-13-XzG" firstAttribute="centerY" secondItem="hZ9-6R-4jY" secondAttribute="centerY" id="H1Z-iY-rHO"/>
@@ -85,6 +94,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="UIBarButtonStop_2x_b0334ee9-f617-46c0-8f05-6a6fd6f223f7" width="34" height="34"/>
+        <image name="Smaller" width="25" height="25"/>
     </resources>
 </document>
