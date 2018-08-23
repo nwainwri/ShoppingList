@@ -11,6 +11,7 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
  
+    @IBOutlet weak var itemUITableView: UITableView!
     
    
   
@@ -19,6 +20,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.itemUITableView.setEditing(true, animated: true)
 
     }
 
