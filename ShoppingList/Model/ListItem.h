@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface taskItem : NSObject
+@interface ListItem : NSObject
 
 //
 //@property (nonatomic, weak) NSString *name;
@@ -16,7 +16,7 @@
 //@property (nonatomic) BOOL status;
 
 
-- (instancetype)initWithTitle:(NSString *)title andAmount:(int)amount;
+- (nonnull instancetype)initWithTitle:(NSString *)title andAmount:(int)amount;
 
 
 @end

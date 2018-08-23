@@ -6,9 +6,9 @@
 //  Copyright © 2018 Jamie. All rights reserved.
 //
 
-#import "taskItem.h"
+#import "ListItem.h"
 
-@interface taskItem()
+@interface ListItem()
 
 @property (nonatomic, weak) NSString *title;
 @property (nonatomic) int amount;
@@ -20,7 +20,7 @@
 
 @end
 
-@implementation taskItem
+@implementation ListItem
 
 
 - (instancetype)initWithTitle:(NSString *)title andAmount:(int)amount{
