@@ -29,21 +29,36 @@ class DemoData: NSObject {
     demoData.remove(at: itemNumber)
   }
   
+  func markListItem(indexnumber: Int) {
+    demoData[indexnumber].status = !demoData[indexnumber].status
+  }
   
   
   
   
-  
-  
-  
-  
-//  DELETE ONCE TESTED -- DROP INTO VIEW CONTROLLER FOR TESTING
-//  actualTest.addListItem(titleString: "HELLO", newNumber: 45)
-//
-//  for item in actualTest.demoData {
-//  print(item.title)
+//  //  DELETE ONCE TESTED -- DROP INTO VIEW CONTROLLER FOR TESTING -- WORKING METHODS FOR VIEW CONTROLLER TO CALL
+//  actualData.addListItem(titleString: "HELLO", newNumber: 45)
+//  actualData.addListItem(titleString: "This one", newNumber: 4)
+//  actualData.addListItem(titleString: "Cars", newNumber: 5)
+//  actualData.addListItem(titleString: "Trester", newNumber: 75)
+//  for item in actualData.demoData {
+//  print("TITLE: \(item.title) | " + "AMOUNT: \(item.amount) | " + "PRIORITY: \(item.priority) | " + "STATUS: \(item.status)")
 //  }
-//   STOP DELETEING HERE -- DROP INTO VIEW CONTROLLER FOR TESTING
+//  print("----------")
+//  actualData.removeListItem(itemNumber: 2)
+//  
+//  for item in actualData.demoData {
+//  print("TITLE: \(item.title) | " + "AMOUNT: \(item.amount) | " + "PRIORITY: \(item.priority) | " + "STATUS: \(item.status)")
+//  }
+//  print("----------")
+//  actualData.markListItem(indexnumber: 1)
+//  actualData.markListItem(indexnumber: 3)
+//  actualData.markListItem(indexnumber: 5)
+//  for item in actualData.demoData {
+//  print("TITLE: \(item.title) | " + "AMOUNT: \(item.amount) | " + "PRIORITY: \(item.priority) | " + "STATUS: \(item.status)")
+//  
+//  }
+//  //   STOP DELETEING HERE -- DROP INTO VIEW CONTROLLER FOR TESTING -- WORKING METHODS FOR VIEW CONTROLLER TO CALL
   
   
   
