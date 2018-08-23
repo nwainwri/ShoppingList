@@ -7,15 +7,17 @@
 //
 
 import UIKit
-import "taskItem.h"
+
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
   
-    
+    var listArray = DemoData()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+       
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,11 +25,17 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         // Dispose of any resources that can be recreated.
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        let demoData = DemoData()
+        return demoData.demoData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        var
+        //let itemCollectionViewCell = ItemCollectionViewCell()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemCollectionViewCell", for: indexPath) as! ItemCollectionViewCell
+        cell.amountUILabel.text = "20"
+        cell.ItemUILabel.text = "Fish"
+        return cell
+        
     }
 
 }

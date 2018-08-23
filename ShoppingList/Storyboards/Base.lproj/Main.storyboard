@@ -68,6 +68,10 @@
                                             <constraint firstItem="XCC-TJ-ln8" firstAttribute="centerY" secondItem="U8c-Xp-Q1H" secondAttribute="centerY" id="vYm-53-ijE"/>
                                         </constraints>
                                         <size key="customSize" width="375" height="50"/>
+                                        <connections>
+                                            <outlet property="ItemUILabel" destination="yCy-S6-3BL" id="YN3-aA-51W"/>
+                                            <outlet property="amountUILabel" destination="XCC-TJ-ln8" id="iek-Qb-bha"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>

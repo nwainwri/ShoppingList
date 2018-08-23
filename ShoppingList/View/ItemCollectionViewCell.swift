@@ -9,5 +9,7 @@
 import UIKit
 
 class ItemCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var ItemUILabel: UILabel!
     
+    @IBOutlet weak var amountUILabel: UILabel!
 }
