@@ -23,6 +23,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.itemUITableView.setEditing(true, animated: true)
+        self.itemUITableView.allowsMultipleSelectionDuringEditing = false;
 
 
     }
