@@ -25,13 +25,19 @@
                                     <constraint firstAttribute="width" constant="36" id="jPY-Fg-qAF"/>
                                 </constraints>
                                 <state key="normal" title="Clear"/>
+                                <connections>
+                                    <action selector="clearItemList:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ukN-NL-4fW"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWR-fq-Oec">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWR-fq-Oec">
                                 <rect key="frame" x="20" y="20" width="57" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="57" id="RX8-E9-s4U"/>
                                 </constraints>
-                                <state key="normal" title="Settings"/>
+                                <state key="normal" title="Edit"/>
+                                <connections>
+                                    <action selector="showEditing:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qp3-10-5tl"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shopping List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJq-5B-jko">
                                 <rect key="frame" x="135" y="24" width="105" height="21"/>
@@ -122,6 +128,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="editUIButton" destination="UWR-fq-Oec" id="5VD-kg-Gwm"/>
                         <outlet property="itemUITableView" destination="0U6-io-Xa3" id="45m-Ha-Jeg"/>
                     </connections>
                 </viewController>
