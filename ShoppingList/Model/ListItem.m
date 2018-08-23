@@ -10,20 +10,11 @@
 
 @interface ListItem()
 
-@property (nonatomic, weak) NSString *title;
-@property (nonatomic) int amount;
-
-@property (nonatomic) int priority;
-@property (nonatomic) BOOL status;
-
-
-
 @end
 
 @implementation ListItem
 
-
-- (instancetype)initWithTitle:(NSString *)title andAmount:(int)amount{
+- (nonnull instancetype)initWithTitle:(NSString *)title andAmount:(int)amount{
   self = [super init];
   if (self) {
     _title = title;
