@@ -10,13 +10,14 @@ import UIKit
 
 
 
+
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
- 
+
     @IBOutlet weak var itemUITableView: UITableView!
-    
-   
-  
-    var listArray = DemoData()
+
+
+
+    var demoData = DemoData()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,27 +31,32 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let demoData = DemoData()
         return demoData.currentItemsArray.count
 
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemTableViewCell", for: indexPath) as! ItemTableViewCell
-                cell.showsReorderControl = true
-                cell.amountUILabel.text = "20"
-                cell.itemUILabel.text = "Fish"
+        cell.amountUILabel.text = "\(demoData.demoData[indexPath.row].amount)"
+        cell.itemUILabel.text = demoData.demoData[indexPath.row].title
                 return cell
     }
-    
-    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-//         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemTableViewCell", for: indexPath) as! ItemTableViewCell
-//        cell.showsReorderControl = true
-        return true
-    }
-  
 
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            // handle delete (by removing the data from your array and updating the tableview)
+            demoData.removeListItem(itemNumber: indexPath.row)
+            tableView.deleteRows(at: [indexPath],
+                                 with: UITableViewRowAnimation.top)
+        }
 }
-
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let movedObject = demoData.demoData[sourceIndexPath.row]
+        demoData.demoData.remove(at: sourceIndexPath.row)
+        demoData.demoData.insert(movedObject, at: destinationIndexPath.row)
+    }
+}
