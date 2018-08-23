@@ -11,7 +11,7 @@ import UIKit
 
 
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AddObjectViewControllerDelgate {
 
     @IBOutlet weak var itemUITableView: UITableView!
 
@@ -60,4 +60,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         demoData.currentItemsArray.remove(at: sourceIndexPath.row)
         demoData.currentItemsArray.insert(movedObject, at: destinationIndexPath.row)
     }
+  
+  func itemAdded(sentItem: ListItem) {
+    
+  }
+
+  
+  
 }
+
+
+
