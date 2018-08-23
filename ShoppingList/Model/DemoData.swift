@@ -33,8 +33,22 @@ class DemoData: NSObject {
     demoData[indexnumber].status = !demoData[indexnumber].status
   }
   
+  func sortEntireList() {
+    var tempArray = [ListItem]()
+    for item in demoData {
+      if (item.status == true) {
+        tempArray.append(item)
+      } else {
+        tempArray.insert(item, at: 0)
+      }
+    }
+    demoData = tempArray
+  }
   
-  
+////  PUT AT TOP OF VIEW CONTROLLER FILE TO RUN TESTS
+//  let actualData = DemoData() //NATHAN ADDED, REMOVE IF ALREADY IN VIEW CONTROLLER
+////    PUT AT TOP OF VIEW CONTROLLER FILE TO RUN TESTS
+
   
 //  //  DELETE ONCE TESTED -- DROP INTO VIEW CONTROLLER FOR TESTING -- WORKING METHODS FOR VIEW CONTROLLER TO CALL
 //  actualData.addListItem(titleString: "HELLO", newNumber: 45)
@@ -58,6 +72,12 @@ class DemoData: NSObject {
 //  print("TITLE: \(item.title) | " + "AMOUNT: \(item.amount) | " + "PRIORITY: \(item.priority) | " + "STATUS: \(item.status)")
 //  
 //  }
+//  // FIRST SORT
+//  print("----------")
+//  actualData.sortEntireList()
+//  for item in actualData.demoData {
+//  print("TITLE: \(item.title) | " + "AMOUNT: \(item.amount) | " + "PRIORITY: \(item.priority) | " + "STATUS: \(item.status)")
+//  }
 //  //   STOP DELETEING HERE -- DROP INTO VIEW CONTROLLER FOR TESTING -- WORKING METHODS FOR VIEW CONTROLLER TO CALL
   
   
@@ -69,25 +89,19 @@ class DemoData: NSObject {
   
   
   
+  //  var demoDataArray:[taskItem] = [firstTask, secondTask, thirdTask, fourthTask, fifthTask]
   
-//  var demoDataArray:[taskItem] = [firstTask, secondTask, thirdTask, fourthTask, fifthTask]
-  
-//  var date: Date
-//  var now = Date()
-//  var dates: [Date]
-//  var dates = [Date]()
-//  var dates: [Date] = []
-  
+  //  var date: Date
+  //  var now = Date()
+  //  var dates: [Date]
+  //  var dates = [Date]()
+  //  var dates: [Date] = []
   
   //= [firstTask, secondTask, thirdTask, fourthTask, fifthTask]
-  
-  
-  
-  
   
   //point of this class is to init data for the demo of the app
   
   // properties needed:
   //      array of taskItem objects
-
+  
 }

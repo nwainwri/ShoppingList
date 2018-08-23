@@ -11,7 +11,6 @@ import UIKit
 class ViewController: UIViewController {
   
   
-  let actualData = DemoData() //NATHAN ADDED, REMOVE IF ALREADY IN VIEW CONTROLLER
     override func viewDidLoad() {
         super.viewDidLoad()
       // Do any additional setup after loading the view, typically from a nib.
