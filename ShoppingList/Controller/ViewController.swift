@@ -45,6 +45,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 return cell
     }
     
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.delete) {
             // handle delete (by removing the data from your array and updating the tableview)
@@ -53,4 +54,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                                  with: UITableViewRowAnimation.top)
         }
 }
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let movedObject = demoData.demoData[sourceIndexPath.row]
+        demoData.demoData.remove(at: sourceIndexPath.row)
+        demoData.demoData.insert(movedObject, at: destinationIndexPath.row)
+    }
 }
