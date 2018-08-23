@@ -9,7 +9,10 @@
 import UIKit
 
 
-class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+ 
+    
+   
   
     var listArray = DemoData()
 
@@ -23,19 +26,34 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let demoData = DemoData()
         return demoData.demoData.count
+
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        //let itemCollectionViewCell = ItemCollectionViewCell()
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemCollectionViewCell", for: indexPath) as! ItemCollectionViewCell
-        cell.amountUILabel.text = "20"
-        cell.ItemUILabel.text = "Fish"
-        return cell
-        
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemTableViewCell", for: indexPath) as! ItemTableViewCell
+                cell.amountUILabel.text = "20"
+                cell.itemUILabel.text = "Fish"
+                return cell
     }
+   
+    
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        let demoData = DemoData()
+//        return demoData.demoData.count
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        //let itemCollectionViewCell = ItemCollectionViewCell()
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemCollectionViewCell", for: indexPath) as! ItemCollectionViewCell
+//        cell.amountUILabel.text = "20"
+//        cell.ItemUILabel.text = "Fish"
+//        return cell
+//
+//    }
 
 }
 
