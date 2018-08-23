@@ -102,6 +102,12 @@
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="addToAmountItems" destination="hZ9-6R-4jY" id="EEB-8T-7q1"/>
+                        <outlet property="amountOfItemsField" destination="WKP-46-uZ3" id="OKx-2o-1aP"/>
+                        <outlet property="subtractFromAmountItems" destination="oiy-3e-tOK" id="uqq-Xc-6bQ"/>
+                        <outlet property="titleOfItemField" destination="oi4-13-XzG" id="WsP-ff-Sg8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j5I-8t-bCF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
