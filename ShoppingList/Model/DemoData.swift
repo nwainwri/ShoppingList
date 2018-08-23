@@ -14,42 +14,18 @@ class DemoData: NSObject {
   var thirdTask = ListItem(title: "Milk 2% 4L", andAmount: 1)
   var fourthTask = ListItem(title: "Can of Black Paint", andAmount: 15)
   var fifthTask = ListItem(title: "Shiny New Car", andAmount: 1)
-  var demoData: [ListItem]
+  var currentItemsArray: [ListItem]
   
   override init() {
-    demoData = [firstTask, secondTask, thirdTask, fourthTask, fifthTask]
+    currentItemsArray = [firstTask, secondTask, thirdTask, fourthTask, fifthTask]
     super.init()
   }
-  
-  func addListItem(titleString: String, newNumber: Int) {
-    demoData.append(ListItem(title: titleString, andAmount: Int32(newNumber)))
-  }
-  
-  func removeListItem(itemNumber: Int) {
-    demoData.remove(at: itemNumber)
-  }
-  
-  func markListItem(indexnumber: Int) {
-    demoData[indexnumber].status = !demoData[indexnumber].status
-  }
-  
-  func sortEntireList() {
-    var tempArray = [ListItem]()
-    for item in demoData {
-      if (item.status == true) {
-        tempArray.append(item)
-      } else {
-        tempArray.insert(item, at: 0)
-      }
-    }
-    demoData = tempArray
-  }
-  
-////  PUT AT TOP OF VIEW CONTROLLER FILE TO RUN TESTS
-//  let actualData = DemoData() //NATHAN ADDED, REMOVE IF ALREADY IN VIEW CONTROLLER
-////    PUT AT TOP OF VIEW CONTROLLER FILE TO RUN TESTS
 
   
+  
+//  //  TEST
+//  //  CODE
+//  //  TO BE REMOVED BY NATHAN
 //  //  DELETE ONCE TESTED -- DROP INTO VIEW CONTROLLER FOR TESTING -- WORKING METHODS FOR VIEW CONTROLLER TO CALL
 //  actualData.addListItem(titleString: "HELLO", newNumber: 45)
 //  actualData.addListItem(titleString: "This one", newNumber: 4)
@@ -59,8 +35,8 @@ class DemoData: NSObject {
 //  print("TITLE: \(item.title) | " + "AMOUNT: \(item.amount) | " + "PRIORITY: \(item.priority) | " + "STATUS: \(item.status)")
 //  }
 //  print("----------")
-//  actualData.removeListItem(itemNumber: 2)
-//  
+//  listArray.removeListItem(itemNumber: 2)
+//
 //  for item in actualData.demoData {
 //  print("TITLE: \(item.title) | " + "AMOUNT: \(item.amount) | " + "PRIORITY: \(item.priority) | " + "STATUS: \(item.status)")
 //  }
@@ -70,7 +46,7 @@ class DemoData: NSObject {
 //  actualData.markListItem(indexnumber: 5)
 //  for item in actualData.demoData {
 //  print("TITLE: \(item.title) | " + "AMOUNT: \(item.amount) | " + "PRIORITY: \(item.priority) | " + "STATUS: \(item.status)")
-//  
+//
 //  }
 //  // FIRST SORT
 //  print("----------")
@@ -79,14 +55,6 @@ class DemoData: NSObject {
 //  print("TITLE: \(item.title) | " + "AMOUNT: \(item.amount) | " + "PRIORITY: \(item.priority) | " + "STATUS: \(item.status)")
 //  }
 //  //   STOP DELETEING HERE -- DROP INTO VIEW CONTROLLER FOR TESTING -- WORKING METHODS FOR VIEW CONTROLLER TO CALL
-  
-  
-  
-  
-  
-  
-  
-  
   
   
   //  var demoDataArray:[taskItem] = [firstTask, secondTask, thirdTask, fourthTask, fifthTask]

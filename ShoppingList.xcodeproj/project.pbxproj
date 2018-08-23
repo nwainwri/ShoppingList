@@ -20,6 +20,10 @@
 		7DB8F9A6212E2E2F00315B5B /* EditingStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DB8F9A5212E2E2F00315B5B /* EditingStoryboard.storyboard */; };
 		F112073A212DEA4F00AAB353 /* ListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F1120739212DEA4F00AAB353 /* ListItem.m */; };
 		F112073C212E174800AAB353 /* DemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F112073B212E174800AAB353 /* DemoData.swift */; };
+		F1DA98BB212F31E50079105F /* DemoData+RemoveItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DA98BA212F31E50079105F /* DemoData+RemoveItem.swift */; };
+		F1DA98BD212F325D0079105F /* DemoData+AddListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DA98BC212F325D0079105F /* DemoData+AddListItem.swift */; };
+		F1DA98BF212F328C0079105F /* DemoData+MarkListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DA98BE212F328C0079105F /* DemoData+MarkListItem.swift */; };
+		F1DA98C1212F32A90079105F /* DemoData+SortEntireList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DA98C0212F32A90079105F /* DemoData+SortEntireList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +65,10 @@
 		F1120738212DEA4F00AAB353 /* ListItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListItem.h; sourceTree = "<group>"; };
 		F1120739212DEA4F00AAB353 /* ListItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListItem.m; sourceTree = "<group>"; };
 		F112073B212E174800AAB353 /* DemoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoData.swift; sourceTree = "<group>"; };
+		F1DA98BA212F31E50079105F /* DemoData+RemoveItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DemoData+RemoveItem.swift"; sourceTree = "<group>"; };
+		F1DA98BC212F325D0079105F /* DemoData+AddListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DemoData+AddListItem.swift"; sourceTree = "<group>"; };
+		F1DA98BE212F328C0079105F /* DemoData+MarkListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DemoData+MarkListItem.swift"; sourceTree = "<group>"; };
+		F1DA98C0212F32A90079105F /* DemoData+SortEntireList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DemoData+SortEntireList.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +179,10 @@
 			isa = PBXGroup;
 			children = (
 				F112073B212E174800AAB353 /* DemoData.swift */,
+				F1DA98C0212F32A90079105F /* DemoData+SortEntireList.swift */,
+				F1DA98BC212F325D0079105F /* DemoData+AddListItem.swift */,
+				F1DA98BA212F31E50079105F /* DemoData+RemoveItem.swift */,
+				F1DA98BE212F328C0079105F /* DemoData+MarkListItem.swift */,
 				7DB8F9A0212DE7E100315B5B /* Item.swift */,
 				F1120738212DEA4F00AAB353 /* ListItem.h */,
 				F1120739212DEA4F00AAB353 /* ListItem.m */,
@@ -312,9 +324,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1DA98C1212F32A90079105F /* DemoData+SortEntireList.swift in Sources */,
+				F1DA98BB212F31E50079105F /* DemoData+RemoveItem.swift in Sources */,
 				7DB8F9A1212DE7E100315B5B /* Item.swift in Sources */,
+				F1DA98BF212F328C0079105F /* DemoData+MarkListItem.swift in Sources */,
 				7DB8F970212DE21000315B5B /* ViewController.swift in Sources */,
 				F112073C212E174800AAB353 /* DemoData.swift in Sources */,
+				F1DA98BD212F325D0079105F /* DemoData+AddListItem.swift in Sources */,
 				7D8CA2AF212E4B88005AF67D /* ItemTableViewCell.swift in Sources */,
 				7DB8F96E212DE21000315B5B /* AppDelegate.swift in Sources */,
 				F112073A212DEA4F00AAB353 /* ListItem.m in Sources */,
