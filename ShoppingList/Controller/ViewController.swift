@@ -33,7 +33,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let demoData = DemoData()
-        return demoData.demoData.count
+        return demoData.currentItemsArray.count
 
     }
     

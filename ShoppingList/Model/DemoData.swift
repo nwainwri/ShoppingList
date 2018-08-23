@@ -14,19 +14,14 @@ class DemoData: NSObject {
   var thirdTask = ListItem(title: "Milk 2% 4L", andAmount: 1)
   var fourthTask = ListItem(title: "Can of Black Paint", andAmount: 15)
   var fifthTask = ListItem(title: "Shiny New Car", andAmount: 1)
-  var demoData: [ListItem]
+  var currentItemsArray: [ListItem]
   
   override init() {
-    demoData = [firstTask, secondTask, thirdTask, fourthTask, fifthTask]
+    currentItemsArray = [firstTask, secondTask, thirdTask, fourthTask, fifthTask]
     super.init()
   }
-  
 
   
-
-
-  
-
   
 //  //  TEST
 //  //  CODE
@@ -60,14 +55,6 @@ class DemoData: NSObject {
 //  print("TITLE: \(item.title) | " + "AMOUNT: \(item.amount) | " + "PRIORITY: \(item.priority) | " + "STATUS: \(item.status)")
 //  }
 //  //   STOP DELETEING HERE -- DROP INTO VIEW CONTROLLER FOR TESTING -- WORKING METHODS FOR VIEW CONTROLLER TO CALL
-  
-  
-  
-  
-  
-  
-  
-  
   
   
   //  var demoDataArray:[taskItem] = [firstTask, secondTask, thirdTask, fourthTask, fifthTask]

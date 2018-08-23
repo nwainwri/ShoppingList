@@ -12,14 +12,14 @@ extension DemoData{
   
   func sortEntireList() {
     var tempArray = [ListItem]()
-    for item in demoData {
+    for item in currentItemsArray {
       if (item.status == true) {
         tempArray.append(item)
       } else {
         tempArray.insert(item, at: 0)
       }
     }
-    demoData = tempArray
+    currentItemsArray = tempArray
   }
   
   

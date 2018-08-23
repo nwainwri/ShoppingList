@@ -10,7 +10,7 @@ import Foundation
 extension DemoData{
   
   func removeListItem(itemNumber: Int) {
-    demoData.remove(at: itemNumber)
+    currentItemsArray.remove(at: itemNumber)
   }
   
 }

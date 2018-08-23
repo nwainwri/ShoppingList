@@ -10,7 +10,7 @@ import Foundation
 extension DemoData{
   
   func addListItem(titleString: String, newNumber: Int) {
-    demoData.append(ListItem(title: titleString, andAmount: Int32(newNumber)))
+    currentItemsArray.append(ListItem(title: titleString, andAmount: Int32(newNumber)))
   }
   
   
