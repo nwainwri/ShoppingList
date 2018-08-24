@@ -28,6 +28,7 @@ class ViewController:
   func itemAdded(sentItem: ListItem)
   {
     print("THIS: \(sentItem.title)")
+    print("THIS: \(sentItem.amount)")
     
     
 

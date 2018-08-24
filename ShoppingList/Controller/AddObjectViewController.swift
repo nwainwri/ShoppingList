@@ -8,89 +8,85 @@
 
 import UIKit
 
-
-
-
-
-
 class AddObjectViewController: UIViewController, UITextFieldDelegate
 {
   // OUTLETS HERE / AND OR PROPERTIES
-  
   weak var delegate: AddObjectViewControllerDelgate?
-  var itemToPassBack = ListItem()
-
+  
+  //  var itemToPassBack = ListItem()
   // Swift
-  
-  @IBOutlet weak var amountOfItemsField: UITextField!
-  
+  @IBOutlet weak var amountOfItemsLabel: UILabel!
   @IBOutlet weak var titleOfItemField: UITextField!
   
+  @IBOutlet weak var addButton: UIButton!
+  @IBOutlet weak var subButton: UIButton!
+  
+  var amount: Int = 0
   
   /// END
-    override func viewDidLoad() {
-        super.viewDidLoad()
-      
-      
-//      titleOfItemField.returnKeyType = .done
-      
-      amountOfItemsField.text = "\(itemToPassBack.amount)"
-      titleOfItemField.text = itemToPassBack.title
-      
-
-
-        // Do any additional setup after loading the view.
+  override func viewDidLoad()
+  {
+    super.viewDidLoad()
+    amountOfItemsLabel.text = "\(amount)"
+    titleOfItemField.placeholder = "Enter the item"
+  }
+  /*
+   // MARK: - Navigation
+   
+   // In a storyboard-based application, you will often want to do a little preparation before navigation
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+   // Get the new view controller using segue.destinationViewController.
+   // Pass the selected object to the new view controller.
+   }
+   */
+  
+  @IBAction func addSubAction(_ sender: Any)
+  {
+    if ( (sender as! UIButton) == addButton)
+    {
+      amount += 1
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    else
+    {
+      if ( amount > 0)
+      {
+        amount -= 1
+      }
     }
-    */
-  
-  
-  
-  @IBAction func addButtonPressed(_ sender: Any) {
-//    print("THIS WORKS TO ADD")
-    itemToPassBack.amount = itemToPassBack.amount + 1
-    amountOfItemsField.text = "\(itemToPassBack.amount)"
+    amountOfItemsLabel.text = "\(amount)"
   }
   
-  @IBAction func subtractButtonPressed(_ sender: Any){
-//    print("THIS WORKS TO SUBTRACT")
-    itemToPassBack.amount = itemToPassBack.amount - 1
-    amountOfItemsField.text = "\(itemToPassBack.amount)"
-  }
-  
-  
-  @IBAction func clearTitleTextButtonPressed(_ sender: Any) {
+  @IBAction func clearTitleTextButtonPressed(_ sender: Any)
+  {
     titleOfItemField.text = ""
-//    print("CLEAR BUTTON PRESSED")
+    amountOfItemsLabel.text = "0"
+    amount = 0
+    //    print("CLEAR BUTTON PRESSED")
   }
+  
+  ////  keep if we add stepper to UI
+  //  @IBAction func stepperChanged(_ sender: Any)
+  //  {
+  //    amount = Int((sender as! UIStepper).value)
+  //  }
   
   func textFieldShouldReturn(_ textField: UITextField) -> Bool
   {
     textField.resignFirstResponder()
     
-//    let tempAmount = Int(amountOfItemsField.text!)
+    //    let tempAmount = Int(amountOfItemsField.text!)
     
-    var itemToPassBack = ListItem()
-
+    let itemToPassBack = ListItem()
+    
     itemToPassBack.title = titleOfItemField.text!
-    itemToPassBack.amount = 0
-    
+    itemToPassBack.amount = Int32(amount)
     
     self.delegate?.itemAdded(sentItem: itemToPassBack)
     
-//    print("ENTER PRESSED")
+        print("ENTER PRESSED")
     return true
   }
-
+  
   
   
   
