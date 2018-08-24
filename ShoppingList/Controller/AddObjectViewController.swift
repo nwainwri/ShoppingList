@@ -22,7 +22,7 @@ class AddObjectViewController: UIViewController, UITextFieldDelegate
   @IBOutlet weak var addButton: UIButton!
   @IBOutlet weak var subButton: UIButton!
   
-  var amount: Int = 0
+  var amount: Int = 1
   
   /// END - OUTLETS HERE / AND OR PROPERTIES
   
@@ -63,7 +63,7 @@ class AddObjectViewController: UIViewController, UITextFieldDelegate
     }
     else
     {
-      if ( amount > 0)
+      if ( amount > 1)
       {
         amount -= 1
       }
@@ -104,9 +104,9 @@ class AddObjectViewController: UIViewController, UITextFieldDelegate
   // START -- HAVE CLEAR BUTTON ON TEXTFIELD, RESET AMOUNT LABEL
   // https://stackoverflow.com/questions/11337961/when-clicking-on-uitextfields-clear-button-keyboard-is-disappearing-not-text
   func textFieldShouldClear(_ textField: UITextField) -> Bool {
-    amountOfItemsLabel.text = "0"
+    amountOfItemsLabel.text = "1"
     titleOfItemField.text = ""
-    amount = 0
+    amount = 1
     textField.resignFirstResponder()
     return false
   }
@@ -134,8 +134,8 @@ class AddObjectViewController: UIViewController, UITextFieldDelegate
     
     //  CLEARS TEXTFIELD/AMOUNTLABEL WHEN ITEM SENT
     titleOfItemField.text = ""
-    amountOfItemsLabel.text = "0"
-    amount = 0
+    amountOfItemsLabel.text = "1"
+    amount = 1
     //  END CLEAR
     
     // print("ENTER PRESSED")
