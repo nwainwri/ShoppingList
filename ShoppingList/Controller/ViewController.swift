@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Realm
 
 class ViewController:
   UIViewController,
@@ -154,6 +155,30 @@ class ViewController:
       myAddVC!.delegate = self
     }
   }
+    
+  //  MARK: - Realm Functions
+    
+//    private func writeUser()
+//    {
+//        let thisUser = "Steve"
+////        let thisUserComment_1 = Comment(inpText: "whatever")
+////        thisUser.comments.append(thisUserComment_1)
+//        
+//        do
+//        {
+//            let realm = try Realm
+//            try realm.write
+//            {
+//                realm.add(thisUser)
+//            }
+//        }
+//        catch
+//        {
+//            print("Error encountered")
+//        }
+//    }
+    
+    
 }
 
 
