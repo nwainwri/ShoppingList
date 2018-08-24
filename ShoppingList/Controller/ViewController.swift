@@ -21,7 +21,7 @@ class ViewController:
   @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
   @IBOutlet weak var itemUITableView: UITableView!
   @IBOutlet weak var editUIButton: UIButton!
-  var demoData = AppData() 
+  var appData = AppData() 
 //  var appData = AppData()
   
   // need array property, mutable.
@@ -41,7 +41,7 @@ class ViewController:
   {
     //                print("THIS: \(sentItem.title)")
     //                print("THIS: \(sentItem.amount)")
-    demoData.currentItemsArray.append(sentItem)
+    appData.currentItemsArray.append(sentItem)
     writeNewItem(addedItem: sentItem)
     itemUITableView.reloadData()
     //                    for anyItem in demoData.currentItemsArray
@@ -82,14 +82,14 @@ class ViewController:
   //  MARK: - TableView Setup
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return demoData.currentItemsArray.count
+    return appData.currentItemsArray.count
   }
   
   func tableView(_ tableView: UITableView,
                  cellForRowAt indexPath: IndexPath) -> UITableViewCell
   {
     let cell = tableView.dequeueReusableCell(withIdentifier: "ItemTableViewCell", for: indexPath) as! ItemTableViewCell
-    let thisItem = demoData.currentItemsArray[indexPath.row]
+    let thisItem = appData.currentItemsArray[indexPath.row]
     
     cell.amountUILabel.text = "\(thisItem.amount)"
     cell.itemUILabel.text = thisItem.title
@@ -111,8 +111,8 @@ class ViewController:
                  didSelectRowAt indexPath: IndexPath)
   {
     
-    demoData.currentItemsArray[indexPath.row].isCompleted = !demoData.currentItemsArray[indexPath.row].isCompleted
-    demoData.sortEntireList()
+    appData.currentItemsArray[indexPath.row].isCompleted = !appData.currentItemsArray[indexPath.row].isCompleted
+    appData.sortEntireList()
     itemUITableView .reloadData()
     
   }
@@ -136,19 +136,19 @@ class ViewController:
   func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
     if (editingStyle == UITableViewCellEditingStyle.delete) {
       //       handle delete (by removing the data from your array and updating the tableview)
-      demoData.removeListItem(itemNumber: indexPath.row)
+      appData.removeListItem(itemNumber: indexPath.row)
       tableView.deleteRows(at: [indexPath],
                            with: UITableViewRowAnimation.top)
     }
   }
   func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-    let movedObject = demoData.currentItemsArray[sourceIndexPath.row]
-    demoData.currentItemsArray.remove(at: sourceIndexPath.row)
-    demoData.currentItemsArray.insert(movedObject, at: destinationIndexPath.row)
+    let movedObject = appData.currentItemsArray[sourceIndexPath.row]
+    appData.currentItemsArray.remove(at: sourceIndexPath.row)
+    appData.currentItemsArray.insert(movedObject, at: destinationIndexPath.row)
   }
   
   @IBAction func clearItemList(_ sender: UIButton) {
-    demoData.currentItemsArray.removeAll()
+    appData.currentItemsArray.removeAll()
     itemUITableView.reloadData()
   }
   

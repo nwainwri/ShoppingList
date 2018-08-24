@@ -1,5 +1,5 @@
 //
-//  demoData.swift
+//  AppData.swift
 //  ShoppingList
 //
 //  Created by Nathan Wainwright on 2018-08-22.
