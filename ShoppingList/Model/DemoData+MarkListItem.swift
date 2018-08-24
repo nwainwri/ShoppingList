@@ -11,7 +11,7 @@ import Foundation
 extension DemoData{
   
   func markListItem(indexnumber: Int) {
-    currentItemsArray[indexnumber].status = !currentItemsArray[indexnumber].status
+    currentItemsArray[indexnumber].isCompleted = !currentItemsArray[indexnumber].isCompleted
   }
   
 }

@@ -27,9 +27,9 @@ class ViewController:
   {
     super.viewDidLoad()
     self.itemUITableView.allowsMultipleSelectionDuringEditing = false;
+    readNewItem()
     NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-    writeNewItem()
   }
   
   func itemAdded(sentItem: ListItem)
@@ -37,6 +37,7 @@ class ViewController:
     //                print("THIS: \(sentItem.title)")
     //                print("THIS: \(sentItem.amount)")
     demoData.currentItemsArray.append(sentItem)
+    writeNewItem(addedItem: sentItem)
     itemUITableView.reloadData()
     //                    for anyItem in demoData.currentItemsArray
     //                    {
@@ -87,7 +88,7 @@ class ViewController:
     
     cell.amountUILabel.text = "\(thisItem.amount)"
     cell.itemUILabel.text = thisItem.title
-    if (thisItem.status) // active
+    if (thisItem.isCompleted) // active
     {
       cell.itemUILabel.textColor = UIColor .lightGray
       cell.amountUILabel.textColor = UIColor .lightGray
@@ -105,7 +106,7 @@ class ViewController:
                  didSelectRowAt indexPath: IndexPath)
   {
     
-    demoData.currentItemsArray[indexPath.row].status = !demoData.currentItemsArray[indexPath.row].status
+    demoData.currentItemsArray[indexPath.row].isCompleted = !demoData.currentItemsArray[indexPath.row].isCompleted
     demoData.sortEntireList()
     itemUITableView .reloadData()
     
@@ -159,12 +160,15 @@ class ViewController:
     
   //  MARK: - Realm Functions
     
-    private func writeNewItem()
+    func writeNewItem(addedItem: ListItem) //need to bring in ListItem object
     {
-        let testItem = ListItem ()
+        let newItem = ListItem ()
+        newItem.title = addedItem.title
+        newItem.amount = addedItem.amount
+        //newItem.priority = addedItem.priority
         let realm = RLMRealm.default()
         realm.beginWriteTransaction()
-        realm.add(testItem)
+        realm.add(newItem)
         do
         {
             try realm.commitWriteTransactionWithoutNotifying([])
@@ -174,6 +178,12 @@ class ViewController:
             print("\(error)")
         }
         
+    }
+    
+    private func readNewItem()
+    {
+        let results = ListItem.allObjects()
+        print("\(results)")
     }
 }
 

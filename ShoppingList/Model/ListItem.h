@@ -16,7 +16,7 @@
 @property (nonatomic) int amount;
 
 @property (nonatomic) int priority;
-@property (nonatomic) BOOL status;
+@property (nonatomic) BOOL isCompleted;
 
 //
 //@property (nonatomic, weak) NSString *name;

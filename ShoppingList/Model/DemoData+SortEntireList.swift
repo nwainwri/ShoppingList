@@ -13,7 +13,7 @@ extension DemoData{
   func sortEntireList() {
     var tempArray = [ListItem]()
     for item in currentItemsArray {
-      if (item.status == true) {
+      if (item.isCompleted == true) {
         tempArray.append(item)
       } else {
         tempArray.insert(item, at: 0)

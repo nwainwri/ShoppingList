@@ -20,7 +20,7 @@
     _title = title;
     _amount = amount;
     _priority = 0;
-    _status = NO;
+    _isCompleted = NO;
   }
   return self;
 }
