@@ -15,7 +15,7 @@ class AddObjectViewController: UIViewController, UITextFieldDelegate
   @IBOutlet var tapGestureRecognizer: UITapGestureRecognizer!
   
   //  var itemToPassBack = ListItem()
-  // Swift
+  
   @IBOutlet weak var amountOfItemsLabel: UILabel!
   @IBOutlet weak var titleOfItemField: UITextField!
   
@@ -24,7 +24,8 @@ class AddObjectViewController: UIViewController, UITextFieldDelegate
   
   var amount: Int = 0
   
-  /// END
+  /// END - OUTLETS HERE / AND OR PROPERTIES
+  
   override func viewDidLoad()
   {
     super.viewDidLoad()
@@ -45,8 +46,17 @@ class AddObjectViewController: UIViewController, UITextFieldDelegate
    // Pass the selected object to the new view controller.
    }
    */
+  
+  //FUNCTION FOR +/- BUTTONS ON UI
   @IBAction func addSubAction(_ sender: Any)
   {
+    // ADD GUARD STATEMENT
+    // IF TEXTFIELD.TXT EMPTY; RETURN
+    guard let text = titleOfItemField.text, !text.isEmpty else {
+      return
+    }
+    
+    
     if ( (sender as! UIButton) == addButton)
     {
       amount += 1
@@ -60,7 +70,10 @@ class AddObjectViewController: UIViewController, UITextFieldDelegate
     }
     amountOfItemsLabel.text = "\(amount)"
   }
+  //end -- FUNCTION FOR +/- BUTTONS ON UI
   
+  
+  // ORIGINAL CLEAR BUTTON ACTION/FUNC
   @IBAction func clearTitleTextButtonPressed(_ sender: Any)
   {
     titleOfItemField.text = ""
@@ -68,6 +81,8 @@ class AddObjectViewController: UIViewController, UITextFieldDelegate
     amount = 0
     //    print("CLEAR BUTTON PRESSED")
   }
+  // end -- ORIGINAL CLEAR BUTTON ACTION/FUNC
+
   ////  keep if we add stepper to UI
   //  @IBAction func stepperChanged(_ sender: Any)
   //  {
