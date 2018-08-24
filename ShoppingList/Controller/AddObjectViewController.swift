@@ -11,25 +11,21 @@ import UIKit
 
 
 
-// put this in delgator, this screen passes data to main screen
-protocol AddObjectViewControllerDelgate: AnyObject
-{
-  func itemAdded(sentItem: ListItem)
-}
+
 
 class AddObjectViewController: UIViewController, UITextFieldDelegate
 {
   // OUTLETS HERE / AND OR PROPERTIES
   
-  weak var delegate:AddObjectViewControllerDelgate?
-  
+  weak var delegate: AddObjectViewControllerDelgate?
+  var itemToPassBack = ListItem()
+
   // Swift
   
   @IBOutlet weak var amountOfItemsField: UITextField!
   
   @IBOutlet weak var titleOfItemField: UITextField!
   
-  var itemToPassBack = ListItem()
   
   /// END
     override func viewDidLoad() {
@@ -46,10 +42,6 @@ class AddObjectViewController: UIViewController, UITextFieldDelegate
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
     /*
     // MARK: - Navigation
@@ -85,7 +77,17 @@ class AddObjectViewController: UIViewController, UITextFieldDelegate
   {
     textField.resignFirstResponder()
     
-    print("klja;dfkljals;jfakl;j")
+//    let tempAmount = Int(amountOfItemsField.text!)
+    
+    var itemToPassBack = ListItem()
+
+    itemToPassBack.title = titleOfItemField.text!
+    itemToPassBack.amount = 0
+    
+    
+    self.delegate?.itemAdded(sentItem: itemToPassBack)
+    
+//    print("ENTER PRESSED")
     return true
   }
 

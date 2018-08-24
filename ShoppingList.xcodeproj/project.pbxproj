@@ -22,6 +22,7 @@
 		F112073C212E174800AAB353 /* DemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F112073B212E174800AAB353 /* DemoData.swift */; };
 		F16F8273212F50AF00135448 /* DemoData+AddToItemAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16F8272212F50AF00135448 /* DemoData+AddToItemAmount.swift */; };
 		F16F8275212F50FD00135448 /* DemoData+SubtractFromItemAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16F8274212F50FD00135448 /* DemoData+SubtractFromItemAmount.swift */; };
+		F1CA12B9212F7C9D000256C1 /* MyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CA12B8212F7C9D000256C1 /* MyProtocol.swift */; };
 		F1DA98BB212F31E50079105F /* DemoData+RemoveItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DA98BA212F31E50079105F /* DemoData+RemoveItem.swift */; };
 		F1DA98BD212F325D0079105F /* DemoData+AddListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DA98BC212F325D0079105F /* DemoData+AddListItem.swift */; };
 		F1DA98BF212F328C0079105F /* DemoData+MarkListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DA98BE212F328C0079105F /* DemoData+MarkListItem.swift */; };
@@ -69,6 +70,7 @@
 		F112073B212E174800AAB353 /* DemoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoData.swift; sourceTree = "<group>"; };
 		F16F8272212F50AF00135448 /* DemoData+AddToItemAmount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DemoData+AddToItemAmount.swift"; sourceTree = "<group>"; };
 		F16F8274212F50FD00135448 /* DemoData+SubtractFromItemAmount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DemoData+SubtractFromItemAmount.swift"; sourceTree = "<group>"; };
+		F1CA12B8212F7C9D000256C1 /* MyProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProtocol.swift; sourceTree = "<group>"; };
 		F1DA98BA212F31E50079105F /* DemoData+RemoveItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DemoData+RemoveItem.swift"; sourceTree = "<group>"; };
 		F1DA98BC212F325D0079105F /* DemoData+AddListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DemoData+AddListItem.swift"; sourceTree = "<group>"; };
 		F1DA98BE212F328C0079105F /* DemoData+MarkListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DemoData+MarkListItem.swift"; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 			children = (
 				7DB8F96F212DE21000315B5B /* ViewController.swift */,
 				7DB8F9A3212DEDAF00315B5B /* AddObjectViewController.swift */,
+				F1CA12B8212F7C9D000256C1 /* MyProtocol.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				7DB8F970212DE21000315B5B /* ViewController.swift in Sources */,
 				F112073C212E174800AAB353 /* DemoData.swift in Sources */,
 				F1DA98BD212F325D0079105F /* DemoData+AddListItem.swift in Sources */,
+				F1CA12B9212F7C9D000256C1 /* MyProtocol.swift in Sources */,
 				7D8CA2AF212E4B88005AF67D /* ItemTableViewCell.swift in Sources */,
 				7DB8F96E212DE21000315B5B /* AppDelegate.swift in Sources */,
 				F112073A212DEA4F00AAB353 /* ListItem.m in Sources */,

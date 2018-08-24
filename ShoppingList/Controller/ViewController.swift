@@ -11,19 +11,51 @@ import UIKit
 
 
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, AddObjectViewControllerDelgate {
-
-
-    @IBOutlet weak var itemUITableView: UITableView!
+class ViewController:
+  UIViewController,
+  UITableViewDelegate,
+  UITableViewDataSource,
+  AddObjectViewControllerDelgate
+{
+  
+  var myAddVC: AddObjectViewController?
+  
+  
+  //when that function is called
+  // his instance of it (in here, in view cntroller)
+  // will run
+  // if he object owning the delega, does deeetae to HERE
+  func itemAdded(sentItem: ListItem)
+  {
+    print("THIS: \(sentItem.title)")
     
+    
+
+    demoData.currentItemsArray.append(sentItem)
+    itemUITableView.reloadData()
+    
+    
+    for anyItem in demoData.currentItemsArray
+    {
+      print ("\(anyItem.title)")
+    }
+  }
+  
+  
+  @IBOutlet weak var itemUITableView: UITableView!
+  
     @IBOutlet weak var editUIButton: UIButton!
     
     
     
     var demoData = DemoData()
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
+      
+      
+      
         // Do any additional setup after loading the view, typically from a nib.
         //self.itemUITableView.setEditing(true, animated: true)
         self.itemUITableView.allowsMultipleSelectionDuringEditing = false;
@@ -105,9 +137,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
 
-    func itemAdded(sentItem: ListItem) {
-    
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+  {
+    if (segue.identifier == "toAddObjectViewController")
+    {
+      myAddVC = (segue.destination as! AddObjectViewController)
+      
+      
+      myAddVC!.delegate = self
+    }
   }
+
 
 }
 
