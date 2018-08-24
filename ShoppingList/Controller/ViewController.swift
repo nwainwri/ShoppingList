@@ -63,11 +63,13 @@ class ViewController:
   func tappedAdditem(){
     //bottomConstraint
     let newConstant :CGFloat
-    if bottomConstraint.constant == -250{
+    if bottomConstraint.constant == -275{ //orig 250
+      // IF THIS CHANGES AT ALL, YOU NEED TO CHANGE SPOT IN STORYBOARD AS WELL, containerview "bottom constraint" MUST match this number
       newConstant = 0
       
     }else{
-      newConstant = -250
+      newConstant = -275 //orig 250; changed so that no 'empty' space below textfield
+     // IF THIS CHANGES AT ALL, YOU NEED TO CHANGE SPOT IN STORYBOARD AS WELL, containerview "bottom constraint" MUST match this number
       
     }
     DispatchQueue.main.async {[unowned self] in

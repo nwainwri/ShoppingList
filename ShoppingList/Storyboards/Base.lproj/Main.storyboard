@@ -86,7 +86,7 @@
                                 </connections>
                             </tableView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wSK-4M-YQ7">
-                                <rect key="frame" x="0.0" y="587" width="375" height="330"/>
+                                <rect key="frame" x="0.0" y="612" width="375" height="330"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="330" id="aSu-tw-e0k"/>
                                 </constraints>
@@ -115,7 +115,7 @@
                             <constraint firstItem="UWR-fq-Oec" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-5" id="Cra-93-wQ9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CzV-5g-qH4" secondAttribute="trailing" constant="16" id="HHb-SU-GCo"/>
                             <constraint firstItem="0U6-io-Xa3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Zx0-se-0Ea"/>
-                            <constraint firstAttribute="bottom" secondItem="wSK-4M-YQ7" secondAttribute="bottom" constant="-250" id="bH0-pd-Ep5"/>
+                            <constraint firstAttribute="bottom" secondItem="wSK-4M-YQ7" secondAttribute="bottom" constant="-275" id="bH0-pd-Ep5"/>
                             <constraint firstItem="UWR-fq-Oec" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="d4U-gf-4Ny"/>
                             <constraint firstItem="0U6-io-Xa3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gPH-HY-ebj"/>
                             <constraint firstItem="wSK-4M-YQ7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jzC-oB-Uvf"/>
