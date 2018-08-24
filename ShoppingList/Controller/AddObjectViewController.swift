@@ -105,6 +105,12 @@ class AddObjectViewController: UIViewController, UITextFieldDelegate
     
     self.delegate?.itemAdded(sentItem: itemToPassBack)
     
+    //  CLEARS TEXTFIELD/AMOUNTLABEL WHEN ITEM SENT
+    titleOfItemField.text = ""
+    amountOfItemsLabel.text = "0"
+    amount = 0
+    //    END CLEAR
+    
     // print("ENTER PRESSED")
     return true
   }
