@@ -12,73 +12,81 @@ import UIKit
 
 
 class ViewController:
-  UIViewController,
-  UITableViewDelegate,
-  UITableViewDataSource,
-  AddObjectViewControllerDelgate
+    UIViewController,
+    UITableViewDelegate,
+    UITableViewDataSource,
+    AddObjectViewControllerDelgate
 {
-  
-  var myAddVC: AddObjectViewController?
-  
-  
-  //when that function is called
-  // his instance of it (in here, in view cntroller)
-  // will run
-  // if he object owning the delega, does deeetae to HERE
-  func itemAdded(sentItem: ListItem)
-  {
-    print("THIS: \(sentItem.title)")
-    print("THIS: \(sentItem.amount)")
     
+    var myAddVC: AddObjectViewController?
     
-
-    demoData.currentItemsArray.append(sentItem)
-    itemUITableView.reloadData()
-    
-    
-    for anyItem in demoData.currentItemsArray
-    {
-      print ("\(anyItem.title)")
-    }
-  }
-  
-  
-  @IBOutlet weak var itemUITableView: UITableView!
-  
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var itemUITableView: UITableView!
     @IBOutlet weak var editUIButton: UIButton!
-    
-    
-    
     var demoData = DemoData()
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
-      
-      
-      
-        // Do any additional setup after loading the view, typically from a nib.
-        //self.itemUITableView.setEditing(true, animated: true)
         self.itemUITableView.allowsMultipleSelectionDuringEditing = false;
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    func itemAdded(sentItem: ListItem)
+    {
+        //    print("THIS: \(sentItem.title)")
+        //    print("THIS: \(sentItem.amount)")
+        demoData.currentItemsArray.append(sentItem)
+        itemUITableView.reloadData()
+        //        for anyItem in demoData.currentItemsArray
+        //        {
+        //            print ("\(anyItem.title)")
+        //        }
+    }
+    
+    //MARK: - Swipe Up
+    
+    @objc func keyboardWillShow (){
+        print("keyboard is on its way!")
+        tappedAdditem()
+    }
+    @objc func keyboardWillHide (){
+        print("keyboard is outta here!")
+    }
+    
+    func tappedAdditem(){
+        //bottomConstraint
+        let newConstant :CGFloat
+        if bottomConstraint.constant == -250{
+            newConstant = 0
+            
+        }else{
+            newConstant = -250
+            
+        }
+        DispatchQueue.main.async {[unowned self] in
+            UIView.animate(withDuration: 0.2, animations: {
+                self.bottomConstraint.constant = newConstant
+                self.view.layoutIfNeeded()
+            })
+        }
         
     }
-    //MARK: - TableView Setup
+    
+//MARK: - TableView Setup
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return demoData.currentItemsArray.count
-        
     }
     
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemTableViewCell", for: indexPath) as! ItemTableViewCell
-        
         let thisItem = demoData.currentItemsArray[indexPath.row]
-        
         cell.amountUILabel.text = "\(thisItem.amount)"
         cell.itemUILabel.text = thisItem.title
-        
         if (thisItem.status) // active
         {
             cell.itemUILabel.textColor = UIColor .lightGray
@@ -92,7 +100,6 @@ class ViewController:
         return cell
     }
     
-    
     func tableView(_ tableView: UITableView,
                    didSelectRowAt indexPath: IndexPath)
     {
@@ -101,7 +108,21 @@ class ViewController:
         itemUITableView .reloadData()
     }
     
-    //MARK: - Delete/Edit Item
+//MARK: - Clear All and Delete/Edit Item
+    
+    @IBAction func showEditing(_ sender: UIButton)
+    {
+        if(self.itemUITableView.isEditing == true)
+        {
+            self.itemUITableView.setEditing(false, animated: true)
+            self.editUIButton.setTitle("Edit", for: .normal)
+        }
+        else
+        {
+            self.itemUITableView.setEditing(true, animated: true)
+            self.editUIButton.setTitle("Done", for: .normal)
+        }
+    }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.delete) {
@@ -117,40 +138,21 @@ class ViewController:
         demoData.currentItemsArray.insert(movedObject, at: destinationIndexPath.row)
     }
     
-    //MARK: - Clear/Edit Buttons
-    
     @IBAction func clearItemList(_ sender: UIButton) {
         demoData.currentItemsArray.removeAll()
         itemUITableView.reloadData()
     }
     
-    @IBAction func showEditing(_ sender: UIButton)
+    //MARK: - Segue
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
-        if(self.itemUITableView.isEditing == true)
+        if (segue.identifier == "toAddObjectViewController")
         {
-            self.itemUITableView.setEditing(false, animated: true)
-            self.editUIButton.setTitle("Edit", for: .normal)
-        }
-        else
-        {
-            self.itemUITableView.setEditing(true, animated: true)
-            self.editUIButton.setTitle("Done", for: .normal)
+            myAddVC = (segue.destination as! AddObjectViewController)
+            myAddVC!.delegate = self
         }
     }
-
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if (segue.identifier == "toAddObjectViewController")
-    {
-      myAddVC = (segue.destination as! AddObjectViewController)
-      
-      
-      myAddVC!.delegate = self
-    }
-  }
-
-
 }
 
 

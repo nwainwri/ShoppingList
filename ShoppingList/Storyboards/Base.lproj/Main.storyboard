@@ -46,7 +46,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0U6-io-Xa3">
-                                <rect key="frame" x="0.0" y="60" width="375" height="277"/>
+                                <rect key="frame" x="0.0" y="60" width="375" height="607"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemTableViewCell" id="LB4-UY-Pmz" customClass="ItemTableViewCell" customModule="ShoppingList" customModuleProvider="target">
@@ -96,7 +96,7 @@
                                 </connections>
                             </tableView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wSK-4M-YQ7">
-                                <rect key="frame" x="0.0" y="337" width="375" height="330"/>
+                                <rect key="frame" x="0.0" y="587" width="375" height="330"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="330" id="aSu-tw-e0k"/>
                                 </constraints>
@@ -108,7 +108,6 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="wSK-4M-YQ7" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="3Wq-wI-h9V"/>
                             <constraint firstItem="CzV-5g-qH4" firstAttribute="baseline" secondItem="UWR-fq-Oec" secondAttribute="baseline" id="5jl-Vj-wKT"/>
                             <constraint firstItem="CzV-5g-qH4" firstAttribute="baseline" secondItem="UWR-fq-Oec" secondAttribute="baseline" id="75m-xk-XfS"/>
                             <constraint firstItem="wSK-4M-YQ7" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="7y1-2F-9WL"/>
@@ -116,18 +115,20 @@
                             <constraint firstItem="UWR-fq-Oec" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Cra-93-wQ9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CzV-5g-qH4" secondAttribute="trailing" constant="20" id="HHb-SU-GCo"/>
                             <constraint firstItem="0U6-io-Xa3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Zx0-se-0Ea"/>
+                            <constraint firstAttribute="bottom" secondItem="wSK-4M-YQ7" secondAttribute="bottom" constant="-250" id="bH0-pd-Ep5"/>
                             <constraint firstItem="UWR-fq-Oec" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="d4U-gf-4Ny"/>
                             <constraint firstItem="0U6-io-Xa3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gPH-HY-ebj"/>
-                            <constraint firstItem="wSK-4M-YQ7" firstAttribute="top" secondItem="0U6-io-Xa3" secondAttribute="bottom" id="hRi-J4-mLo"/>
                             <constraint firstItem="wSK-4M-YQ7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jzC-oB-Uvf"/>
                             <constraint firstItem="JJq-5B-jko" firstAttribute="baseline" secondItem="UWR-fq-Oec" secondAttribute="baseline" id="kzX-CI-BT5"/>
                             <constraint firstItem="0U6-io-Xa3" firstAttribute="top" secondItem="UWR-fq-Oec" secondAttribute="bottom" constant="10" id="lXu-bu-s5j"/>
                             <constraint firstItem="JJq-5B-jko" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mdH-2t-BcU"/>
+                            <constraint firstAttribute="bottom" secondItem="0U6-io-Xa3" secondAttribute="bottom" id="mmm-YW-fIY"/>
                             <constraint firstItem="CzV-5g-qH4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="sBc-S3-ZMh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="bottomConstraint" destination="bH0-pd-Ep5" id="LVS-2x-AyA"/>
                         <outlet property="editUIButton" destination="UWR-fq-Oec" id="5VD-kg-Gwm"/>
                         <outlet property="itemUITableView" destination="0U6-io-Xa3" id="45m-Ha-Jeg"/>
                     </connections>

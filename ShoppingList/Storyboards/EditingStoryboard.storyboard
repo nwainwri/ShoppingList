@@ -101,6 +101,7 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="YX6-nj-ZVD" firstAttribute="leading" secondItem="uIA-WZ-5hi" secondAttribute="leading" constant="16" id="PDF-RW-PFR"/>
                             <constraint firstItem="xkP-OV-3kP" firstAttribute="top" secondItem="uIA-WZ-5hi" secondAttribute="top" constant="6" id="gbZ-Rb-oxQ"/>
@@ -109,6 +110,9 @@
                             <constraint firstItem="xkP-OV-3kP" firstAttribute="centerX" secondItem="l4B-b0-TGM" secondAttribute="centerX" id="x5j-YI-hro"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uIA-WZ-5hi"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="p3y-XH-8SD" appends="YES" id="AEp-iv-tao"/>
+                        </connections>
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -116,10 +120,12 @@
                         <outlet property="addButton" destination="fkC-2b-fm6" id="v4o-hO-s35"/>
                         <outlet property="amountOfItemsLabel" destination="2Yv-jI-PFB" id="Fhv-iI-1kh"/>
                         <outlet property="subButton" destination="cnx-8y-dH8" id="eAb-Vz-XEg"/>
+                        <outlet property="tapGestureRecognizer" destination="p3y-XH-8SD" id="euv-l1-pfR"/>
                         <outlet property="titleOfItemField" destination="Fpw-MU-KYD" id="xEG-Sc-an2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j5I-8t-bCF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="p3y-XH-8SD"/>
             </objects>
             <point key="canvasLocation" x="146.40000000000001" y="285.60719640179911"/>
         </scene>
