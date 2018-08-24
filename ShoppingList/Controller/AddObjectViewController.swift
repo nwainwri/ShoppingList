@@ -15,7 +15,7 @@ class AddObjectViewController: UIViewController, UITextFieldDelegate
   @IBOutlet var tapGestureRecognizer: UITapGestureRecognizer!
   
   //  var itemToPassBack = ListItem()
-  // Swift
+  
   @IBOutlet weak var amountOfItemsLabel: UILabel!
   @IBOutlet weak var titleOfItemField: UITextField!
   
@@ -24,7 +24,8 @@ class AddObjectViewController: UIViewController, UITextFieldDelegate
   
   var amount: Int = 0
   
-  /// END
+  /// END - OUTLETS HERE / AND OR PROPERTIES
+  
   override func viewDidLoad()
   {
     super.viewDidLoad()
@@ -45,8 +46,17 @@ class AddObjectViewController: UIViewController, UITextFieldDelegate
    // Pass the selected object to the new view controller.
    }
    */
+  
+  //FUNCTION FOR +/- BUTTONS ON UI
   @IBAction func addSubAction(_ sender: Any)
   {
+    // ADD GUARD STATEMENT
+    // IF TEXTFIELD.TXT EMPTY; RETURN
+    guard let text = titleOfItemField.text, !text.isEmpty else {
+      return
+    }
+    
+    
     if ( (sender as! UIButton) == addButton)
     {
       amount += 1
@@ -60,19 +70,26 @@ class AddObjectViewController: UIViewController, UITextFieldDelegate
     }
     amountOfItemsLabel.text = "\(amount)"
   }
+  //end -- FUNCTION FOR +/- BUTTONS ON UI
   
-  @IBAction func clearTitleTextButtonPressed(_ sender: Any)
-  {
-    titleOfItemField.text = ""
-    amountOfItemsLabel.text = "0"
-    amount = 0
-    //    print("CLEAR BUTTON PRESSED")
-  }
+  
+//  // ORIGINAL CLEAR BUTTON ACTION/FUNC
+//  @IBAction func clearTitleTextButtonPressed(_ sender: Any)
+//  {
+//    titleOfItemField.text = ""
+//    amountOfItemsLabel.text = "0"
+//    amount = 0
+//    //    print("CLEAR BUTTON PRESSED")
+//  }
+//  // end -- ORIGINAL CLEAR BUTTON ACTION/FUNC
+
   ////  keep if we add stepper to UI
   //  @IBAction func stepperChanged(_ sender: Any)
   //  {
   //    amount = Int((sender as! UIStepper).value)
   //  }
+  
+  
   
   //  START BLOCK -- CHARACTER LIMIT
   let ACCEPTABLE_CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_"
@@ -84,6 +101,17 @@ class AddObjectViewController: UIViewController, UITextFieldDelegate
     return (string == filtered)
   }
   //  END BLOCK -- CHARACTER LIMIT
+  
+  // HAVE CLEAR BUTTON ON TEXTFIELD, RESET AMOUNT LABEL
+  // https://stackoverflow.com/questions/11337961/when-clicking-on-uitextfields-clear-button-keyboard-is-disappearing-not-text
+  func textFieldShouldClear(_ textField: UITextField) -> Bool {
+    amountOfItemsLabel.text = "0"
+    titleOfItemField.text = ""
+    amount = 0
+    textField.resignFirstResponder()
+    return false
+  }
+  // END
   
   func textFieldShouldReturn(_ textField: UITextField) -> Bool
   {
