@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+@import Realm;
 
-@interface ListItem : NSObject
+@interface ListItem : RLMObject
 
 
 @property (nonatomic, nonnull) NSString *title;
