@@ -53,6 +53,7 @@ class ViewController:
     }
     @objc func keyboardWillHide (){
         print("keyboard is outta here!")
+        tappedAdditem()
     }
     
     func tappedAdditem(){
