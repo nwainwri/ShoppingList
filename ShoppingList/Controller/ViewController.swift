@@ -29,6 +29,7 @@ class ViewController:
     self.itemUITableView.allowsMultipleSelectionDuringEditing = false;
     NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    writeNewItem()
   }
   
   func itemAdded(sentItem: ListItem)
@@ -158,27 +159,22 @@ class ViewController:
     
   //  MARK: - Realm Functions
     
-//    private func writeUser()
-//    {
-//        let thisUser = "Steve"
-////        let thisUserComment_1 = Comment(inpText: "whatever")
-////        thisUser.comments.append(thisUserComment_1)
-//        
-//        do
-//        {
-//            let realm = try Realm
-//            try realm.write
-//            {
-//                realm.add(thisUser)
-//            }
-//        }
-//        catch
-//        {
-//            print("Error encountered")
-//        }
-//    }
-    
-    
+    private func writeNewItem()
+    {
+        let testItem = ListItem ()
+        let realm = RLMRealm.default()
+        realm.beginWriteTransaction()
+        realm.add(testItem)
+        do
+        {
+            try realm.commitWriteTransactionWithoutNotifying([])
+        }
+        catch let error
+        {
+            print("\(error)")
+        }
+        
+    }
 }
 
 
