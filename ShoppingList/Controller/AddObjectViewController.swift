@@ -90,6 +90,14 @@ class AddObjectViewController: UIViewController, UITextFieldDelegate
     textField.resignFirstResponder()
     //    let tempAmount = Int(amountOfItemsField.text!)
     
+    //GUARD STATEMENT TO PREVENT BLANK ENTRIES
+    // if text from textfield IS empty; return false
+    // if not, grab information, put into 'itemToPassBack', then return true.
+    guard let text = titleOfItemField.text, !text.isEmpty else {
+      return false
+    }
+    //END GUARD STATEMENT -- does rest if it's not empty
+    
     let itemToPassBack = ListItem()
     
     itemToPassBack.title = titleOfItemField.text!
