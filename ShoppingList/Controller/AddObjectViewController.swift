@@ -74,6 +74,8 @@ class AddObjectViewController: UIViewController, UITextFieldDelegate
   //    amount = Int((sender as! UIStepper).value)
   //  }
   
+  
+  
   //  START BLOCK -- CHARACTER LIMIT
   let ACCEPTABLE_CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_"
   
@@ -84,6 +86,17 @@ class AddObjectViewController: UIViewController, UITextFieldDelegate
     return (string == filtered)
   }
   //  END BLOCK -- CHARACTER LIMIT
+  
+  // HAVE CLEAR BUTTON ON TEXTFIELD, RESET AMOUNT LABEL
+  // https://stackoverflow.com/questions/11337961/when-clicking-on-uitextfields-clear-button-keyboard-is-disappearing-not-text
+  func textFieldShouldClear(_ textField: UITextField) -> Bool {
+    amountOfItemsLabel.text = "0"
+    titleOfItemField.text = ""
+    amount = 0
+    textField.resignFirstResponder()
+    return false
+  }
+  // END
   
   func textFieldShouldReturn(_ textField: UITextField) -> Bool
   {
