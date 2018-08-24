@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DemoData: NSObject {
+class AppData: NSObject {
   var firstTask = ListItem(title: "Apples", andAmount: 5)
   var secondTask = ListItem(title: "Oranges", andAmount: 1)
   var thirdTask = ListItem(title: "Milk 2% 4L", andAmount: 1)
@@ -18,9 +18,11 @@ class DemoData: NSObject {
   
   override init() {
     currentItemsArray = [firstTask, secondTask, thirdTask, fourthTask, fifthTask]
+                        // spot to connect realm?
     super.init()
   }
 
+  // REAME TO MODEL DATA
   
   
 //  //  TEST

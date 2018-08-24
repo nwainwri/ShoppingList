@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension DemoData{
+extension AppData{
   //currently sorts based on bool; will still need to sort based on that
   // need to add sort method to also sort based on alphabet of title?
   //

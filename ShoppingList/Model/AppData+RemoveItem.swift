@@ -7,7 +7,7 @@
 //
 
 import Foundation
-extension DemoData{
+extension AppData{
   
   func removeListItem(itemNumber: Int) {
     currentItemsArray.remove(at: itemNumber)

@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension DemoData{
+extension AppData{
   
   func subtractFromItemAmount(indexnumber: Int) {
     currentItemsArray[indexnumber].amount = currentItemsArray[indexnumber].amount - 1

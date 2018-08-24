@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension DemoData{
+extension AppData{
   
   func markListItem(indexnumber: Int) {
     currentItemsArray[indexnumber].isCompleted = !currentItemsArray[indexnumber].isCompleted

@@ -21,7 +21,10 @@ class ViewController:
   @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
   @IBOutlet weak var itemUITableView: UITableView!
   @IBOutlet weak var editUIButton: UIButton!
-  var demoData = DemoData()
+  var demoData = AppData() 
+//  var appData = AppData()
+  
+  // need array property, mutable.
   
   override func viewDidLoad()
   {
