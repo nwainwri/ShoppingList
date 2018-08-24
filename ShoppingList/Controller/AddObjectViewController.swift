@@ -73,15 +73,15 @@ class AddObjectViewController: UIViewController, UITextFieldDelegate
   //end -- FUNCTION FOR +/- BUTTONS ON UI
   
   
-  // ORIGINAL CLEAR BUTTON ACTION/FUNC
-  @IBAction func clearTitleTextButtonPressed(_ sender: Any)
-  {
-    titleOfItemField.text = ""
-    amountOfItemsLabel.text = "0"
-    amount = 0
-    //    print("CLEAR BUTTON PRESSED")
-  }
-  // end -- ORIGINAL CLEAR BUTTON ACTION/FUNC
+//  // ORIGINAL CLEAR BUTTON ACTION/FUNC
+//  @IBAction func clearTitleTextButtonPressed(_ sender: Any)
+//  {
+//    titleOfItemField.text = ""
+//    amountOfItemsLabel.text = "0"
+//    amount = 0
+//    //    print("CLEAR BUTTON PRESSED")
+//  }
+//  // end -- ORIGINAL CLEAR BUTTON ACTION/FUNC
 
   ////  keep if we add stepper to UI
   //  @IBAction func stepperChanged(_ sender: Any)

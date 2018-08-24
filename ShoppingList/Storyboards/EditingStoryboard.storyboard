@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -64,7 +63,7 @@
                                         </subviews>
                                     </stackView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Item Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Fpw-MU-KYD">
-                                        <rect key="frame" x="90" y="0.0" width="223" height="30"/>
+                                        <rect key="frame" x="90" y="0.0" width="253" height="30"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -73,28 +72,13 @@
                                             <outlet property="delegate" destination="raK-QT-nFu" id="XTs-7i-JKX"/>
                                         </connections>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gbm-bj-lzy">
-                                        <rect key="frame" x="313" y="0.0" width="30" height="30"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="Gbm-bj-lzy" secondAttribute="height" multiplier="1:1" id="lSa-SJ-cyq"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                        <state key="normal" title="X"/>
-                                        <connections>
-                                            <action selector="clearTitleTextButtonPressed:" destination="raK-QT-nFu" eventType="touchUpInside" id="fhX-vG-be9"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="Fpw-MU-KYD" firstAttribute="leading" secondItem="y4f-L3-pC1" secondAttribute="trailing" id="03n-4p-Fue"/>
-                                    <constraint firstItem="Gbm-bj-lzy" firstAttribute="top" secondItem="YX6-nj-ZVD" secondAttribute="top" id="ALa-DY-Gzh"/>
                                     <constraint firstItem="Fpw-MU-KYD" firstAttribute="top" secondItem="YX6-nj-ZVD" secondAttribute="top" id="GrW-fJ-BXC"/>
-                                    <constraint firstItem="Gbm-bj-lzy" firstAttribute="height" secondItem="YX6-nj-ZVD" secondAttribute="height" id="bZV-fc-HOk"/>
                                     <constraint firstItem="y4f-L3-pC1" firstAttribute="top" secondItem="YX6-nj-ZVD" secondAttribute="top" id="dn5-TP-7Gq"/>
-                                    <constraint firstAttribute="trailing" secondItem="Gbm-bj-lzy" secondAttribute="trailing" id="eVh-NL-yEZ"/>
-                                    <constraint firstItem="Gbm-bj-lzy" firstAttribute="leading" secondItem="Fpw-MU-KYD" secondAttribute="trailing" id="krZ-RG-6V0"/>
+                                    <constraint firstAttribute="trailing" secondItem="Fpw-MU-KYD" secondAttribute="trailing" id="lnK-NM-OkP"/>
                                     <constraint firstAttribute="height" constant="30" id="olF-m8-fE0"/>
                                     <constraint firstItem="Fpw-MU-KYD" firstAttribute="height" secondItem="YX6-nj-ZVD" secondAttribute="height" id="qNQ-xE-sVD"/>
                                     <constraint firstItem="y4f-L3-pC1" firstAttribute="height" secondItem="YX6-nj-ZVD" secondAttribute="height" id="rdj-sS-57s"/>
