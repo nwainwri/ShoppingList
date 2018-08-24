@@ -92,7 +92,7 @@ class AddObjectViewController: UIViewController, UITextFieldDelegate
   
   
   //  START BLOCK -- CHARACTER LIMIT
-  let ACCEPTABLE_CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_"
+  let ACCEPTABLE_CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_ "
   
   func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
     let cs = NSCharacterSet(charactersIn: ACCEPTABLE_CHARACTERS).inverted

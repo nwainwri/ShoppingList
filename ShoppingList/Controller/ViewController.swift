@@ -32,6 +32,8 @@ class ViewController:
     writeNewItem()
   }
   
+  
+  
   func itemAdded(sentItem: ListItem)
   {
     //                print("THIS: \(sentItem.title)")
