@@ -34,7 +34,14 @@ class ViewController:
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
 
-    //MARK: - Swipe Up
+
+    
+ 
+
+    
+    
+        //MARK: - Keyboard
+    
     
     @objc func keyboardWillShow (){
         tappedAdditem(keyboardUp: true)
@@ -64,6 +71,13 @@ class ViewController:
         }
         
     }
+    
+     //  MARK: - Long Press to Edit
+    
+    @IBAction func EditLongPressGestureRecognizer(_ sender: UILongPressGestureRecognizer) {
+        print("Long press felt")
+    }
+    
     
     //  MARK: - TableView Setup
     

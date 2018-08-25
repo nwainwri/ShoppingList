@@ -109,9 +109,11 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="0.96862745098039216" blue="0.78823529411764703" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <gestureRecognizers/>
                                         <connections>
                                             <outlet property="amountUILabel" destination="XCC-TJ-ln8" id="DCv-vu-yic"/>
                                             <outlet property="itemUILabel" destination="yCy-S6-3BL" id="sdM-zt-lTh"/>
+                                            <outletCollection property="gestureRecognizers" destination="T1f-OF-TcT" appends="YES" id="J9L-3t-Jh2"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -157,6 +159,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="T1f-OF-TcT">
+                    <connections>
+                        <action selector="EditLongPressGestureRecognizer:" destination="BYZ-38-t0r" id="GFh-a6-HA6"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-143.19999999999999" y="-58.020989505247378"/>
         </scene>
