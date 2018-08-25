@@ -8,9 +8,16 @@
 
 import UIKit
 
-class AddObjectViewController: UIViewController, UITextFieldDelegate
+class AddObjectViewController:
+    UIViewController,
+    UITextFieldDelegate,
+    UIPickerViewDataSource,
+    UIPickerViewDelegate
 {
   // OUTLETS HERE / AND OR PROPERTIES
+    
+    @IBOutlet weak var ListUIPickerView: UIPickerView!
+    
   weak var delegate: AddObjectViewControllerDelgate?
   @IBOutlet var tapGestureRecognizer: UITapGestureRecognizer!
   
@@ -30,6 +37,8 @@ class AddObjectViewController: UIViewController, UITextFieldDelegate
   {
     super.viewDidLoad()
    // tapGestureRecognizer.addTarget(self, action: #selector(bottomsUp))
+    self.ListUIPickerView.delegate = self
+    self.ListUIPickerView.dataSource = self
     amountOfItemsLabel.text = "\(amount)"
     titleOfItemField.placeholder = "Enter the item"
   }
@@ -166,6 +175,24 @@ class AddObjectViewController: UIViewController, UITextFieldDelegate
         //  END CLEAR
         
         // print("ENTER PRESSED")
+    }
+    
+    //  MARK: - Picker View
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    } //columns needed
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 5
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if component == 0 {
+            return "Shopping List"
+        } else {
+            return "Add new list"
+        }
     }
     
 }

@@ -99,14 +99,25 @@
                                     <constraint firstItem="y4f-L3-pC1" firstAttribute="leading" secondItem="YX6-nj-ZVD" secondAttribute="leading" id="sVN-4r-dxm"/>
                                 </constraints>
                             </view>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u6F-0U-UY3">
+                                <rect key="frame" x="100" y="42" width="467" height="162"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="raK-QT-nFu" id="S5p-N6-pCc"/>
+                                    <outlet property="delegate" destination="raK-QT-nFu" id="qJD-xz-Usl"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="u6F-0U-UY3" firstAttribute="centerX" secondItem="l4B-b0-TGM" secondAttribute="centerX" id="6hx-ez-m5B"/>
                             <constraint firstItem="YX6-nj-ZVD" firstAttribute="leading" secondItem="uIA-WZ-5hi" secondAttribute="leading" constant="4" id="PDF-RW-PFR"/>
+                            <constraint firstItem="u6F-0U-UY3" firstAttribute="top" secondItem="YX6-nj-ZVD" secondAttribute="bottom" id="SaI-JH-ya2"/>
                             <constraint firstItem="xkP-OV-3kP" firstAttribute="top" secondItem="uIA-WZ-5hi" secondAttribute="top" constant="4" id="gbZ-Rb-oxQ"/>
+                            <constraint firstItem="uIA-WZ-5hi" firstAttribute="trailing" secondItem="u6F-0U-UY3" secondAttribute="trailing" constant="100" id="jrv-CH-mdA"/>
                             <constraint firstItem="uIA-WZ-5hi" firstAttribute="trailing" secondItem="YX6-nj-ZVD" secondAttribute="trailing" constant="4" id="lbJ-Rx-eJK"/>
                             <constraint firstItem="YX6-nj-ZVD" firstAttribute="top" secondItem="uIA-WZ-5hi" secondAttribute="top" constant="12" id="oiD-BE-RF2"/>
+                            <constraint firstItem="u6F-0U-UY3" firstAttribute="leading" secondItem="uIA-WZ-5hi" secondAttribute="leading" constant="100" id="wJf-EB-P4R"/>
                             <constraint firstItem="xkP-OV-3kP" firstAttribute="centerX" secondItem="l4B-b0-TGM" secondAttribute="centerX" id="x5j-YI-hro"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uIA-WZ-5hi"/>
@@ -117,6 +128,7 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="ListUIPickerView" destination="u6F-0U-UY3" id="ybK-Ld-aYx"/>
                         <outlet property="addButton" destination="fkC-2b-fm6" id="v4o-hO-s35"/>
                         <outlet property="amountOfItemsLabel" destination="2Yv-jI-PFB" id="Fhv-iI-1kh"/>
                         <outlet property="subButton" destination="cnx-8y-dH8" id="eAb-Vz-XEg"/>
@@ -127,7 +139,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j5I-8t-bCF" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="p3y-XH-8SD"/>
             </objects>
-            <point key="canvasLocation" x="625" y="202"/>
+            <point key="canvasLocation" x="560" y="174"/>
         </scene>
     </scenes>
 </document>
