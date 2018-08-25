@@ -19,6 +19,8 @@ class AddObjectViewController:
     @IBOutlet weak var ListUIPickerView: UIPickerView!
     
   weak var delegate: AddObjectViewControllerDelgate?
+    var listArray: [String] = ["Save this list", "Add new list", "My saved list"]
+    
   @IBOutlet var tapGestureRecognizer: UITapGestureRecognizer!
   
   //  var itemToPassBack = ListItem()
@@ -184,15 +186,11 @@ class AddObjectViewController:
     } //columns needed
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 5
+        return listArray.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        if component == 0 {
-            return "Shopping List"
-        } else {
-            return "Add new list"
-        }
+            return self.listArray[row]
     }
     
 }
