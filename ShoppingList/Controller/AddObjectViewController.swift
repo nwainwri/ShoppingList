@@ -29,13 +29,13 @@ class AddObjectViewController: UIViewController, UITextFieldDelegate
   override func viewDidLoad()
   {
     super.viewDidLoad()
-    tapGestureRecognizer.addTarget(self, action: #selector(bottomsUp))
+   // tapGestureRecognizer.addTarget(self, action: #selector(bottomsUp))
     amountOfItemsLabel.text = "\(amount)"
     titleOfItemField.placeholder = "Enter the item"
   }
   
   @objc func bottomsUp (){
-    delegate?.tappedAdditem()
+   // delegate?.tappedAdditem()
     //        print("yup it works")
   }
   /*

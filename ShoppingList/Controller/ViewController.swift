@@ -37,16 +37,17 @@ class ViewController:
     //MARK: - Swipe Up
     
     @objc func keyboardWillShow (){
-        tappedAdditem()
+        tappedAdditem(keyboardUp: true)
     }
     @objc func keyboardWillHide (){
-         tappedAdditem()
+         tappedAdditem(keyboardUp: false)
     }
     
-    func tappedAdditem(){
+    func tappedAdditem(keyboardUp:Bool){
         //bottomConstraint
         let newConstant :CGFloat
-        if bottomConstraint.constant == -275{ //orig 250
+        if keyboardUp == true {
+        //if bottomConstraint.constant == -275{ //orig 250
             // IF THIS CHANGES AT ALL, YOU NEED TO CHANGE SPOT IN STORYBOARD AS WELL, containerview "bottom constraint" MUST match this number
             newConstant = 0
             
