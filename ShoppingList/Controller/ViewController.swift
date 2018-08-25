@@ -84,9 +84,7 @@ class ViewController:
     cell.amountUILabel.text = "\(thisItem.amount)"
     cell.itemUILabel.text = thisItem.title
     
-    // 1
-    let string = cell.itemUILabel.text
-    let attributedString = NSMutableAttributedString(string: string!)
+
 
     
     // start -- mark off bar -- properties
@@ -99,7 +97,8 @@ class ViewController:
     {
       cell.itemUILabel.textColor = UIColor .lightGray
       cell.amountUILabel.textColor = UIColor .lightGray
-      cell.markOffBar.backgroundColor = UIColor .black // mark off bar colour black only when isCompleted==True
+       cell.markOffBar.backgroundColor = UIColor .red // mark off bar colour black only when isCompleted==True
+      cell.markOffBar.alpha = 0.5;
     }
     else
     {
