@@ -23,14 +23,14 @@ class ViewController:
   @IBOutlet weak var editUIButton: UIButton!
   var appData = AppData() 
 //  var appData = AppData()
-  
+  var realmArray = [ListItem]()
   // need array property, mutable.
   
   override func viewDidLoad()
   {
     super.viewDidLoad()
     self.itemUITableView.allowsMultipleSelectionDuringEditing = false;
-    readNewItem()
+    //readNewItem()
     NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
   }
@@ -113,7 +113,21 @@ class ViewController:
                  didSelectRowAt indexPath: IndexPath)
   {
     
+    //appData.currentItemsArray[indexPath.row].isCompleted = !appData.currentItemsArray[indexPath.row].isCompleted
+    
+    let realm = RLMRealm.default()
+    realm.beginWriteTransaction()
     appData.currentItemsArray[indexPath.row].isCompleted = !appData.currentItemsArray[indexPath.row].isCompleted
+    do
+    {
+        try realm.commitWriteTransactionWithoutNotifying([])
+    }
+    catch let error
+    {
+        print("\(error)")
+    }
+    
+    //writeNewItem(addedItem: appData.currentItemsArray[indexPath.row])
     appData.sortEntireList()
     itemUITableView .reloadData()
     
@@ -172,7 +186,7 @@ class ViewController:
         let newItem = ListItem ()
         newItem.title = addedItem.title
         newItem.amount = addedItem.amount
-        //newItem.priority = addedItem.priority
+        newItem.priority = addedItem.priority
         let realm = RLMRealm.default()
         realm.beginWriteTransaction()
         realm.add(newItem)
@@ -186,12 +200,7 @@ class ViewController:
         }
         
     }
-    
-    private func readNewItem()
-    {
-        let results = ListItem.allObjects()
-        print("\(results)")
-    }
+
 }
 
 

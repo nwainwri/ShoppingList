@@ -9,20 +9,32 @@
 import UIKit
 
 class AppData: NSObject {
-  var firstTask = ListItem(title: "Apples", andAmount: 5)
-  var secondTask = ListItem(title: "Oranges", andAmount: 1)
-  var thirdTask = ListItem(title: "Milk 2% 4L", andAmount: 1)
-  var fourthTask = ListItem(title: "Can of Black Paint", andAmount: 15)
-  var fifthTask = ListItem(title: "Shiny New Car", andAmount: 1)
-  var currentItemsArray: [ListItem]
-  
-  override init() {
-    currentItemsArray = [firstTask, secondTask, thirdTask, fourthTask, fifthTask]
-                        // spot to connect realm?
-    super.init()
-  }
-
-  // REAME TO MODEL DATA
+    //  var firstTask = ListItem(title: "Apples", andAmount: 5)
+    //  var secondTask = ListItem(title: "Oranges", andAmount: 1)
+    //  var thirdTask = ListItem(title: "Milk 2% 4L", andAmount: 1)
+    //  var fourthTask = ListItem(title: "Can of Black Paint", andAmount: 15)
+    //  var fifthTask = ListItem(title: "Shiny New Car", andAmount: 1)
+    var currentItemsArray: [ListItem] = []
+    
+    override init() {
+        // currentItemsArray = [firstTask, secondTask, thirdTask, fourthTask, fifthTask]
+        super.init()
+        readSavedItems()
+    }
+    
+    
+    func readSavedItems()
+    {
+        
+        let results = ListItem.allObjects() as! RLMResults<ListItem>
+        for index in 0..<results.count{
+            currentItemsArray.append(results[index])
+        }
+        print("\(currentItemsArray)")
+    }
+    
+    
+// REAME TO MODEL DATAone 
   
   
 //  //  TEST
