@@ -83,10 +83,15 @@ class ViewController:
     cell.amountUILabel.text = "\(thisItem.amount)"
     cell.itemUILabel.text = thisItem.title
     
+    // 1
+    let string = cell.itemUILabel.text
+    let attributedString = NSMutableAttributedString(string: string!)
+
+    
     // start -- mark off bar -- properties
     cell.markOffBar.backgroundColor = UIColor .clear
-//    let myString = cell.itemUILabel.text
-//    let size: CGSize = myString!.size(withAttributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 17.0)])
+//    let myString = thisItem.title
+//    let size: CGSize = myString.size(withAttributes: [NSAttributedStringKey.font: UIFont.systemFont(ofSize: 17.0)])
 //    cell.markOffBar.frame.size.width = size.width
     
     if (thisItem.isCompleted) // active
