@@ -13,6 +13,13 @@ class ItemTableViewCell: UITableViewCell {
     @IBOutlet weak var itemUILabel: UILabel!
     
     @IBOutlet weak var amountUILabel: UILabel!
+  
+  //TEST FOR 'MARK OFF'
+  
+  
+  @IBOutlet weak var markOffBar: UIView!
+  
+  
 
     override func awakeFromNib() {
         super.awakeFromNib()
