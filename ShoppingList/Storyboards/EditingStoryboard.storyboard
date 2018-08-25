@@ -72,16 +72,22 @@
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                         <connections>
                                             <outlet property="delegate" destination="raK-QT-nFu" id="XTs-7i-JKX"/>
                                         </connections>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2gV-eu-QaR">
+                                        <rect key="frame" x="335" y="0.0" width="22" height="30"/>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="Fpw-MU-KYD" firstAttribute="leading" secondItem="y4f-L3-pC1" secondAttribute="trailing" constant="4" id="03n-4p-Fue"/>
+                                    <constraint firstAttribute="bottom" secondItem="2gV-eu-QaR" secondAttribute="bottom" id="4df-VV-LHB"/>
+                                    <constraint firstItem="2gV-eu-QaR" firstAttribute="top" secondItem="YX6-nj-ZVD" secondAttribute="top" id="8oh-IK-8mk"/>
                                     <constraint firstItem="Fpw-MU-KYD" firstAttribute="top" secondItem="YX6-nj-ZVD" secondAttribute="top" id="GrW-fJ-BXC"/>
+                                    <constraint firstAttribute="trailing" secondItem="2gV-eu-QaR" secondAttribute="trailing" constant="10" id="c5Y-eq-LQu"/>
                                     <constraint firstItem="y4f-L3-pC1" firstAttribute="top" secondItem="YX6-nj-ZVD" secondAttribute="top" id="dn5-TP-7Gq"/>
                                     <constraint firstAttribute="trailing" secondItem="Fpw-MU-KYD" secondAttribute="trailing" id="lnK-NM-OkP"/>
                                     <constraint firstAttribute="height" constant="30" id="olF-m8-fE0"/>
