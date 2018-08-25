@@ -113,7 +113,21 @@ class ViewController:
                  didSelectRowAt indexPath: IndexPath)
   {
     
+    //appData.currentItemsArray[indexPath.row].isCompleted = !appData.currentItemsArray[indexPath.row].isCompleted
+    
+    let realm = RLMRealm.default()
+    realm.beginWriteTransaction()
     appData.currentItemsArray[indexPath.row].isCompleted = !appData.currentItemsArray[indexPath.row].isCompleted
+    do
+    {
+        try realm.commitWriteTransactionWithoutNotifying([])
+    }
+    catch let error
+    {
+        print("\(error)")
+    }
+    
+    //writeNewItem(addedItem: appData.currentItemsArray[indexPath.row])
     appData.sortEntireList()
     itemUITableView .reloadData()
     
@@ -172,7 +186,7 @@ class ViewController:
         let newItem = ListItem ()
         newItem.title = addedItem.title
         newItem.amount = addedItem.amount
-        //newItem.priority = addedItem.priority
+        newItem.priority = addedItem.priority
         let realm = RLMRealm.default()
         realm.beginWriteTransaction()
         realm.add(newItem)
