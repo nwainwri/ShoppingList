@@ -67,7 +67,7 @@
                                         </subviews>
                                     </stackView>
                                     <textField opaque="NO" contentMode="left" contentHorizontalAlignment="leading" contentVerticalAlignment="center" placeholder="Enter Item Name" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Fpw-MU-KYD">
-                                        <rect key="frame" x="94" y="0.0" width="273" height="30"/>
+                                        <rect key="frame" x="94" y="0.0" width="233" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="textColor"/>
@@ -77,8 +77,11 @@
                                             <outlet property="delegate" destination="raK-QT-nFu" id="XTs-7i-JKX"/>
                                         </connections>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2gV-eu-QaR">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2gV-eu-QaR" userLabel="Add Item Button">
                                         <rect key="frame" x="335" y="0.0" width="22" height="30"/>
+                                        <connections>
+                                            <action selector="AddItemUIButton:" destination="raK-QT-nFu" eventType="touchUpInside" id="cK0-6O-fas"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -89,7 +92,7 @@
                                     <constraint firstItem="Fpw-MU-KYD" firstAttribute="top" secondItem="YX6-nj-ZVD" secondAttribute="top" id="GrW-fJ-BXC"/>
                                     <constraint firstAttribute="trailing" secondItem="2gV-eu-QaR" secondAttribute="trailing" constant="10" id="c5Y-eq-LQu"/>
                                     <constraint firstItem="y4f-L3-pC1" firstAttribute="top" secondItem="YX6-nj-ZVD" secondAttribute="top" id="dn5-TP-7Gq"/>
-                                    <constraint firstAttribute="trailing" secondItem="Fpw-MU-KYD" secondAttribute="trailing" id="lnK-NM-OkP"/>
+                                    <constraint firstAttribute="trailing" secondItem="Fpw-MU-KYD" secondAttribute="trailing" constant="40" id="lnK-NM-OkP"/>
                                     <constraint firstAttribute="height" constant="30" id="olF-m8-fE0"/>
                                     <constraint firstItem="Fpw-MU-KYD" firstAttribute="height" secondItem="YX6-nj-ZVD" secondAttribute="height" id="qNQ-xE-sVD"/>
                                     <constraint firstItem="y4f-L3-pC1" firstAttribute="height" secondItem="YX6-nj-ZVD" secondAttribute="height" id="rdj-sS-57s"/>

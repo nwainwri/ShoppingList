@@ -107,7 +107,7 @@ class AddObjectViewController: UIViewController, UITextFieldDelegate
     amountOfItemsLabel.text = "1"
     titleOfItemField.text = ""
     amount = 1
-    textField.resignFirstResponder()
+    //textField.resignFirstResponder()
     return false
   }
   // END -- have clear
@@ -115,30 +115,56 @@ class AddObjectViewController: UIViewController, UITextFieldDelegate
   func textFieldShouldReturn(_ textField: UITextField) -> Bool
   {
     textField.resignFirstResponder()
-    //    let tempAmount = Int(amountOfItemsField.text!)
-    
-    //GUARD STATEMENT TO PREVENT BLANK ENTRIES
-    // if text from textfield IS empty; return false
-    // if not, grab information, put into 'itemToPassBack', then return true.
-    guard let text = titleOfItemField.text, !text.isEmpty else {
-      return false
-    }
-    //END GUARD STATEMENT -- does rest if it's not empty
-    
-    let itemToPassBack = ListItem()
-    
-    itemToPassBack.title = titleOfItemField.text!
-    itemToPassBack.amount = Int32(amount)
-    
-    self.delegate?.itemAdded(sentItem: itemToPassBack)
-    
-    //  CLEARS TEXTFIELD/AMOUNTLABEL WHEN ITEM SENT
-    titleOfItemField.text = ""
-    amountOfItemsLabel.text = "1"
-    amount = 1
-    //  END CLEAR
-    
-    // print("ENTER PRESSED")
+//    //    let tempAmount = Int(amountOfItemsField.text!)
+//
+//    //GUARD STATEMENT TO PREVENT BLANK ENTRIES
+//    // if text from textfield IS empty; return false
+//    // if not, grab information, put into 'itemToPassBack', then return true.
+//    //END GUARD STATEMENT -- does rest if it's not empty
+//
+//    let itemToPassBack = ListItem()
+//
+//    itemToPassBack.title = titleOfItemField.text!
+//    itemToPassBack.amount = Int32(amount)
+//
+//    self.delegate?.itemAdded(sentItem: itemToPassBack)
+//
+//    //  CLEARS TEXTFIELD/AMOUNTLABEL WHEN ITEM SENT
+//    titleOfItemField.text = ""
+//    amountOfItemsLabel.text = "1"
+//    amount = 1
+//    //  END CLEAR
+//
+//    // print("ENTER PRESSED")
     return true
   }
+    
+    @IBAction func AddItemUIButton(_ sender: UIButton) {
+        
+        //    let tempAmount = Int(amountOfItemsField.text!)
+        
+        //GUARD STATEMENT TO PREVENT BLANK ENTRIES
+        // if text from textfield IS empty; return false
+        // if not, grab information, put into 'itemToPassBack', then return true.
+        guard let text = titleOfItemField.text, !text.isEmpty else {
+            return
+        }
+        //END GUARD STATEMENT -- does rest if it's not empty
+        
+        let itemToPassBack = ListItem()
+        
+        itemToPassBack.title = titleOfItemField.text!
+        itemToPassBack.amount = Int32(amount)
+        
+        self.delegate?.itemAdded(sentItem: itemToPassBack)
+        
+        //  CLEARS TEXTFIELD/AMOUNTLABEL WHEN ITEM SENT
+        titleOfItemField.text = ""
+        amountOfItemsLabel.text = "1"
+        amount = 1
+        //  END CLEAR
+        
+        // print("ENTER PRESSED")
+    }
+    
 }
