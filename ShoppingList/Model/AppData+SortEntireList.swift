@@ -19,6 +19,7 @@ extension AppData{
   //
   func sortEntireList() {
     var tempArray = [ListItem]()
+    
     for item in currentItemsArray {
       if (item.isCompleted == true) {
         tempArray.append(item)
@@ -26,6 +27,7 @@ extension AppData{
         tempArray.insert(item, at: 0)
       }
     }
+    
     currentItemsArray = tempArray
   }
   
