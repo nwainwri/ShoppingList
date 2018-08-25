@@ -76,18 +76,26 @@ class ViewController:
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemTableViewCell", for: indexPath) as! ItemTableViewCell
         let thisItem = appData.currentItemsArray[indexPath.row]
-        
+      
+      //    SPOT/FUNC FOR MARKING SOMETHING DONE
+      // if lightgrey, then 'done/marked' have a black bar 'seeable/alpha=1' on top
+      // if black, then 'not done' have black bar alpha = 0
         cell.amountUILabel.text = "\(thisItem.amount)"
         cell.itemUILabel.text = thisItem.title
+      //mark off bar
+      cell.markOffBar.backgroundColor = UIColor .clear
         if (thisItem.isCompleted) // active
         {
             cell.itemUILabel.textColor = UIColor .lightGray
             cell.amountUILabel.textColor = UIColor .lightGray
+          // @IBOutlet weak var markOffBar: UIView!
+            cell.markOffBar.backgroundColor = UIColor .black
         }
         else
         {
             cell.itemUILabel.textColor = UIColor .black
             cell.amountUILabel.textColor = UIColor .black
+          cell.markOffBar.backgroundColor = UIColor .clear
         }
         return cell
     }
@@ -121,7 +129,9 @@ class ViewController:
         writeNewItem(addedItem: sentItem)
         itemUITableView.reloadData()
     }
-    
+  
+  
+
     @IBAction func showEditing(_ sender: UIButton)
     {
         if(self.itemUITableView.isEditing == true)
