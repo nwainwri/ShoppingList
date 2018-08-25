@@ -38,18 +38,14 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="clip" translatesAutoresizingMaskIntoConstraints="NO" id="CzV-5g-qH4">
                                         <rect key="frame" x="319" y="0.0" width="36" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" title="Clear">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
+                                        <state key="normal" title="Clear"/>
                                         <connections>
                                             <action selector="clearItemList:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ukN-NL-4fW"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWR-fq-Oec">
                                         <rect key="frame" x="4" y="0.0" width="30" height="30"/>
-                                        <state key="normal" title="Edit">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
+                                        <state key="normal" title="Edit"/>
                                         <connections>
                                             <action selector="showEditing:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qp3-10-5tl"/>
                                         </connections>
