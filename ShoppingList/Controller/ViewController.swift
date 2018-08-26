@@ -293,6 +293,30 @@ class ViewController:
       clearUIButton.alpha = 1.0
     }
   }
+    
+    func saveCurrentList (listName: (String), currentArray: (Array<ListItem>)){
+       
+        let shoppingList = ShoppingList()
+        shoppingList.listName = listName
+        for index in 0..<currentArray.count{
+           shoppingList.shoppingList.add(currentArray[index])
+        }
+        let realm = RLMRealm.default()
+        realm.beginWriteTransaction()
+        realm.add(shoppingList)
+        do
+        {
+            try realm.commitWriteTransactionWithoutNotifying([])
+        }
+        catch let error
+        {
+            print("\(error)")
+        }
+    }
+    
+    func saveNewList (listName: (String)){
+        
+    }
   
   
   
