@@ -142,6 +142,7 @@ class ViewController:
   {
     appData.currentItemsArray.append(sentItem)
     writeNewItem(addedItem: sentItem)
+    appData.sortEntireList()
     itemUITableView.reloadData()
   }
   
