@@ -134,6 +134,7 @@ class AddObjectViewController:
   
   
   
+  
   // START -- HAVE CLEAR BUTTON ON TEXTFIELD, RESET AMOUNT LABEL
   // https://stackoverflow.com/questions/11337961/when-clicking-on-uitextfields-clear-button-keyboard-is-disappearing-not-text
   func textFieldShouldClear(_ textField: UITextField) -> Bool {
