@@ -19,10 +19,12 @@ class AddObjectViewController:
     @IBOutlet weak var ListUIPickerView: UIPickerView!
     
   weak var delegate: AddObjectViewControllerDelgate?
-    var listArray: [String] = ["Save this list", "Add new list", "My saved list"]
+    var listArray: [String] = ["Menu", "Save this list", "Add a new list", "My saved lists"]
+    var listPickerRow = Int ()
     
-  @IBOutlet var tapGestureRecognizer: UITapGestureRecognizer!
-  
+@IBOutlet var tapGestureRecognizer: UITapGestureRecognizer!
+
+    
   //  var itemToPassBack = ListItem()
   
   @IBOutlet weak var amountOfItemsLabel: UILabel!
@@ -41,6 +43,8 @@ class AddObjectViewController:
    // tapGestureRecognizer.addTarget(self, action: #selector(bottomsUp))
     self.ListUIPickerView.delegate = self
     self.ListUIPickerView.dataSource = self
+
+    
     amountOfItemsLabel.text = "\(amount)"
     titleOfItemField.placeholder = "Enter the item"
   }
@@ -193,4 +197,21 @@ class AddObjectViewController:
             return self.listArray[row]
     }
     
+        func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+            let choice = self.listArray[row]
+            alertForMenuChoice(choice: choice)
+        }
+
+
+    func alertForMenuChoice (choice:String){
+        var alert = UIAlertController()
+        if choice == "Save this list" {
+        alert = UIAlertController(title: "\(choice)", message: "What would you like your list to be called?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Save", comment: "Default action"), style: .default, handler: { _ in
+            NSLog("The \"OK\" alert occured.")
+        }))
+        }
+        self.present(alert, animated: true, completion: nil)
+    }
+
 }
