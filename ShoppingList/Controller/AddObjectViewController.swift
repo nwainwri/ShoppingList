@@ -214,15 +214,17 @@ class AddObjectViewController:
         var alert = UIAlertController()
         if choice == "Save this list" {
         alert = UIAlertController(title: "\(choice)", message: "What would you like to save your list as?", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Save", comment: "Default action"), style: .default, handler: { _ in
-            NSLog("The \"OK\" alert occured.")
-        }))
+        alert.addTextField { (textField) in
+                textField.text = ""
+         alert.addAction(UIAlertAction(title: NSLocalizedString("Save", comment: "Default action"), style: .default))
+        }
         }
         if choice == "Add a new list" {
-            alert = UIAlertController(title: "\(choice)", message: "What would you like your new list to be called?", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("Add", comment: "Default action"), style: .default, handler: { _ in
-                NSLog("The \"OK\" alert occured.")
-            }))
+            alert = UIAlertController(title: "\(choice)", message: "What would you like to name your new list?", preferredStyle: .alert)
+            alert.addTextField { (textField) in
+                textField.text = ""
+                alert.addAction(UIAlertAction(title: NSLocalizedString("Add", comment: "Default action"), style: .default))
+        }
         }else{
             print("Load list")
         }
