@@ -132,10 +132,6 @@ class ViewController:
         
     }
 
-    appData.sortEntireList()
-    itemUITableView .reloadData()
-    
-  }
   
   //  MARK: - Add, Edit, Delete, Move Item and Clear All
   
@@ -148,16 +144,16 @@ class ViewController:
   }
   
   
-  
-  @IBAction func showEditing(_ sender: UIButton)
-  {
-    if(self.itemUITableView.isEditing == true)
-    {
-        appData.currentItemsArray.append(sentItem)
-        writeNewItem(addedItem: sentItem)
-        itemUITableView.reloadData()
-    }
-    
+  //-----
+//  @IBAction func showEditing(_ sender: UIButton)
+//  {
+//    if(self.itemUITableView.isEditing == true){
+//    
+//        appData.currentItemsArray.append(sentItem)
+//        writeNewItem(addedItem: sentItem)
+//        itemUITableView.reloadData()
+//    }
+//}
     
     
     @IBAction func showEditing(_ sender: UIButton)

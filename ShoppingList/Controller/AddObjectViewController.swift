@@ -14,6 +14,8 @@ class AddObjectViewController:
     UIPickerViewDataSource,
     UIPickerViewDelegate
 {
+
+    
   // OUTLETS HERE / AND OR PROPERTIES
     
     @IBOutlet weak var ListUIPickerView: UIPickerView!
@@ -198,7 +200,7 @@ class AddObjectViewController:
     //  END CLEAR
     
     changeButtonState(number: 0) // set buttons to disabled
-    
+    }
     //  MARK: - Picker View
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -258,7 +260,7 @@ class AddObjectViewController:
     //      addListItemButton.alpha = 0.5
     
     // print("ENTER PRESSED")
-  }
+ // }
   // FUNCTION JUST HANDLES THE BUTTON STATES, TO GREY OUT WHEN NOT ENABLED/ETC
   // number = 1 to get buttons 'on'
   // number = 0 to get buttons 'off'
