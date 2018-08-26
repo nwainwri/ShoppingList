@@ -196,6 +196,10 @@ class AddObjectViewController:
     itemToPassBack.title = titleOfItemField.text!
     itemToPassBack.amount = Int32(amount)
     
+    // MARK: -- ADDS TIMESTAMP TO NEW ITEM
+    let timeStamp = NSDate.init()
+    itemToPassBack.dateStamp = timeStamp as Date?
+    // ADDS TIMESTAMP TO NEW ITEM
     self.delegate?.itemAdded(sentItem: itemToPassBack)
     
     //  CLEARS TEXTFIELD/AMOUNTLABEL WHEN ITEM SENT

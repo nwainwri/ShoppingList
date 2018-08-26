@@ -18,6 +18,8 @@
 @property (nonatomic) int priority;
 @property (nonatomic) BOOL isCompleted;
 
+@property (nonatomic) NSDate *dateStamp;
+
 //
 //@property (nonatomic, weak) NSString *name;
 //@property (nonatomic) int priority;

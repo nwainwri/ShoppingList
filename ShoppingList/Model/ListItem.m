@@ -14,6 +14,7 @@
 
 @implementation ListItem
 
+
 - (nonnull instancetype)initWithTitle:(NSString *)title andAmount:(int)amount{
   self = [super init];
   if (self) {
@@ -21,7 +22,19 @@
     _amount = amount;
     _priority = 0;
     _isCompleted = NO;
+//    _dateStamp = [NSDate date];
   }
   return self;
 }
+//
+//NSDate *currentDate = [NSDate date];
+//NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+//[dateFormatter setDateFormat:@"dd.MM.YY HH:mm:ss"];
+//NSString *dateString = [dateFormatter stringFromDate:currentDate];
+
+
+
+
+
+
 @end

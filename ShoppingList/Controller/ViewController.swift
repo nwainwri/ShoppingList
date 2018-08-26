@@ -41,7 +41,7 @@ class ViewController:
   let firstLaunch = FirstLaunch()
   
   @IBAction func imageTapped(sender: AnyObject) {
-    print("Image Tapped.")
+//    print("Image Tapped.")
     intialLaunchImage.isHidden = true
   }
 
@@ -54,7 +54,7 @@ class ViewController:
     //FIRST LAUNCH TEST
 
     if firstLaunch.isFirstLaunch {
-      print("LAUNCHED") // will only print if app first launched.
+      print("LAUNCHED: This will ONLY print once.") // will only print if app first launched.
       
       intialLaunchImage.alpha = 1.0
       
@@ -65,7 +65,14 @@ class ViewController:
     }
     
 
+    //JUST FOR TESTING DATESTAMP
     
+    var testThingForNow = ListItem(title: "just to test date", andAmount: 0)
+    print(testThingForNow)
+    testThingForNow.dateStamp = NSDate() as Date?
+    print("LET'S SEE IF WE GET A DATE BELOW :: 1")
+    print(testThingForNow.dateStamp)
+    // END -- TEST
     
     //END -- FIRST LAUNCH TEST
 
@@ -298,6 +305,9 @@ class ViewController:
     newItem.title = addedItem.title
     newItem.amount = addedItem.amount
     newItem.priority = addedItem.priority
+    //ADDED TO SAVE DATESTAMP
+    newItem.dateStamp = addedItem.dateStamp
+    // END
     let realm = RLMRealm.default()
     realm.beginWriteTransaction()
     realm.add(newItem)
