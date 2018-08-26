@@ -199,17 +199,32 @@ class AddObjectViewController:
     
         func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
             let choice = self.listArray[row]
-            alertForMenuChoice(choice: choice)
-        }
-
+            switch choice{
+            case "Menu":
+                print("Menu")
+            case "Save this list":
+                alertForMenuChoice(choice: choice)
+            case "Add a new list":
+                alertForMenuChoice(choice: choice)
+            default: print("load list")
+            }
+    }
 
     func alertForMenuChoice (choice:String){
         var alert = UIAlertController()
         if choice == "Save this list" {
-        alert = UIAlertController(title: "\(choice)", message: "What would you like your list to be called?", preferredStyle: .alert)
+        alert = UIAlertController(title: "\(choice)", message: "What would you like to save your list as?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: NSLocalizedString("Save", comment: "Default action"), style: .default, handler: { _ in
             NSLog("The \"OK\" alert occured.")
         }))
+        }
+        if choice == "Add a new list" {
+            alert = UIAlertController(title: "\(choice)", message: "What would you like your new list to be called?", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("Add", comment: "Default action"), style: .default, handler: { _ in
+                NSLog("The \"OK\" alert occured.")
+            }))
+        }else{
+            print("Load list")
         }
         self.present(alert, animated: true, completion: nil)
     }
