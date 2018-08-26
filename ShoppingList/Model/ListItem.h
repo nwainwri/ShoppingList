@@ -20,6 +20,8 @@
 
 @property (nonatomic) NSDate *dateStamp;
 
+@property (nonatomic) int currentSpot;
+
 //
 //@property (nonatomic, weak) NSString *name;
 //@property (nonatomic) int priority;

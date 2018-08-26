@@ -305,9 +305,18 @@ class ViewController:
     newItem.title = addedItem.title
     newItem.amount = addedItem.amount
     newItem.priority = addedItem.priority
+    // MARK: -- datestamp and currentSpot
     //ADDED TO SAVE DATESTAMP
     newItem.dateStamp = addedItem.dateStamp
     // END
+    
+    //START -- current spot
+    newItem.currentSpot = Int32(appData.currentItemsArray.count)
+    print("THIS:\(newItem.currentSpot)")
+    //END --
+    
+    
+    
     let realm = RLMRealm.default()
     realm.beginWriteTransaction()
     realm.add(newItem)

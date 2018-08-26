@@ -22,6 +22,7 @@
     _amount = amount;
     _priority = 0;
     _isCompleted = NO;
+    _currentSpot = 0;
 //    _dateStamp = [NSDate date];
   }
   return self;
