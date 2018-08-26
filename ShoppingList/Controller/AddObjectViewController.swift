@@ -32,18 +32,9 @@ class AddObjectViewController: UIViewController, UITextFieldDelegate
   override func viewDidLoad()
   {
     super.viewDidLoad()
-   // tapGestureRecognizer.addTarget(self, action: #selector(bottomsUp))
+    // tapGestureRecognizer.addTarget(self, action: #selector(bottomsUp))
+    changeButtonState(number: 0) // set buttons to disabled
     
-    // START -- below block at view load will disable buttons, need spot where it will reenable
-    addButton.isEnabled = false
-    addButton.alpha = 0.5
-    
-    subButton.isEnabled = false
-    subButton.alpha = 0.5
-    
-    addListItemButton.isEnabled = false
-    addListItemButton.alpha = 0.5
-    // END
     
     
     amountOfItemsLabel.text = "\(amount)"
@@ -51,7 +42,7 @@ class AddObjectViewController: UIViewController, UITextFieldDelegate
   }
   
   @objc func bottomsUp (){
-   // delegate?.tappedAdditem()
+    // delegate?.tappedAdditem()
     //        print("yup it works")
   }
   /*
@@ -89,23 +80,23 @@ class AddObjectViewController: UIViewController, UITextFieldDelegate
   //end -- FUNCTION FOR +/- BUTTONS ON UI
   
   
-//  // ORIGINAL CLEAR BUTTON ACTION/FUNC
-//  @IBAction func clearTitleTextButtonPressed(_ sender: Any)
-//  {
-//    titleOfItemField.text = ""
-//    amountOfItemsLabel.text = "0"
-//    amount = 0
-//    //    print("CLEAR BUTTON PRESSED")
-//  }
-//  // end -- ORIGINAL CLEAR BUTTON ACTION/FUNC
-
+  //  // ORIGINAL CLEAR BUTTON ACTION/FUNC
+  //  @IBAction func clearTitleTextButtonPressed(_ sender: Any)
+  //  {
+  //    titleOfItemField.text = ""
+  //    amountOfItemsLabel.text = "0"
+  //    amount = 0
+  //    //    print("CLEAR BUTTON PRESSED")
+  //  }
+  //  // end -- ORIGINAL CLEAR BUTTON ACTION/FUNC
+  
   ////  keep if we add stepper to UI
   //  @IBAction func stepperChanged(_ sender: Any)
   //  {
   //    amount = Int((sender as! UIStepper).value)
   //  }
   
-
+  
   //  START BLOCK -- CHARACTER LIMIT
   let ACCEPTABLE_CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_ "
   
@@ -118,21 +109,12 @@ class AddObjectViewController: UIViewController, UITextFieldDelegate
   //  END BLOCK -- CHARACTER LIMIT
   
   //WHEN TEXTFIELD SELECTED; THEN ENABLE BUTTONS
-
   @IBAction func userHasEnteredText(_ sender: UITextField) {
-    addButton.isEnabled = true
-    addButton.alpha = 1
-    
-    subButton.isEnabled = true
-    subButton.alpha = 1
-    
-    addListItemButton.isEnabled = true
-    addListItemButton.alpha = 1
-  
+    changeButtonState(number: 1) // set buttons to enabled
   }
   
   
-
+  
   
   
   
@@ -149,27 +131,21 @@ class AddObjectViewController: UIViewController, UITextFieldDelegate
   
   func textFieldShouldReturn(_ textField: UITextField) -> Bool
   {
-     textField.resignFirstResponder()
-//    //    let tempAmount = Int(amountOfItemsField.text!)
+    textField.resignFirstResponder()
+    //    //    let tempAmount = Int(amountOfItemsField.text!)
     
     guard let text = titleOfItemField.text, !text.isEmpty else {
       
-        return false
+      return false
     }
-  
-
+    
+    
     //END GUARD STATEMENT -- does rest if it's not empty
     
     let itemToPassBack = ListItem()
     
-    addButton.isEnabled = false
-    addButton.alpha = 0.5
+    changeButtonState(number: 0) // set buttons to disabled
     
-    subButton.isEnabled = false
-    subButton.alpha = 0.5
-    
-    addListItemButton.isEnabled = false
-    addListItemButton.alpha = 0.5
     
     itemToPassBack.title = titleOfItemField.text!
     itemToPassBack.amount = Int32(amount)
@@ -184,32 +160,60 @@ class AddObjectViewController: UIViewController, UITextFieldDelegate
     
     return true
   }
+  
+  @IBAction func AddItemUIButton(_ sender: UIButton) {
     
-    @IBAction func AddItemUIButton(_ sender: UIButton) {
-        
-        //    let tempAmount = Int(amountOfItemsField.text!)
-        
-        //GUARD STATEMENT TO PREVENT BLANK ENTRIES
-        // if text from textfield IS empty; return false
-        // if not, grab information, put into 'itemToPassBack', then return true.
-        guard let text = titleOfItemField.text, !text.isEmpty else {
-            return
-        }
-        //END GUARD STATEMENT -- does rest if it's not empty
-        
-        let itemToPassBack = ListItem()
-        
-        itemToPassBack.title = titleOfItemField.text!
-        itemToPassBack.amount = Int32(amount)
-        
-        self.delegate?.itemAdded(sentItem: itemToPassBack)
-        
-        //  CLEARS TEXTFIELD/AMOUNTLABEL WHEN ITEM SENT
-        titleOfItemField.text = ""
-        amountOfItemsLabel.text = "1"
-        amount = 1
-        //  END CLEAR
+    //    let tempAmount = Int(amountOfItemsField.text!)
+    
+    //GUARD STATEMENT TO PREVENT BLANK ENTRIES
+    // if text from textfield IS empty; return false
+    // if not, grab information, put into 'itemToPassBack', then return true.
+    guard let text = titleOfItemField.text, !text.isEmpty else {
+      return
+    }
+    //END GUARD STATEMENT -- does rest if it's not empty
+    
+    let itemToPassBack = ListItem()
+    
+    itemToPassBack.title = titleOfItemField.text!
+    itemToPassBack.amount = Int32(amount)
+    
+    self.delegate?.itemAdded(sentItem: itemToPassBack)
+    
+    //  CLEARS TEXTFIELD/AMOUNTLABEL WHEN ITEM SENT
+    titleOfItemField.text = ""
+    amountOfItemsLabel.text = "1"
+    amount = 1
+    //  END CLEAR
+    
+    changeButtonState(number: 0) // set buttons to disabled
+    
+    
+    //      addButton.isEnabled = false
+    //      addButton.alpha = 0.5
+    //
+    //      subButton.isEnabled = false
+    //      subButton.alpha = 0.5
+    //
+    //      addListItemButton.isEnabled = false
+    //      addListItemButton.alpha = 0.5
+    
+    // print("ENTER PRESSED")
+  }
+  // FUNCTION JUST HANDLES THE BUTTON STATES, TO GREY OUT WHEN NOT ENABLED/ETC
+  // number = 1 to get buttons 'on'
+  // number = 0 to get buttons 'off'
+  func changeButtonState(number: Int) {
+    if number == 1 {
+      addButton.isEnabled = true
+      addButton.alpha = 1
       
+      subButton.isEnabled = true
+      subButton.alpha = 1
+      
+      addListItemButton.isEnabled = true
+      addListItemButton.alpha = 1
+    } else {
       addButton.isEnabled = false
       addButton.alpha = 0.5
       
@@ -218,8 +222,7 @@ class AddObjectViewController: UIViewController, UITextFieldDelegate
       
       addListItemButton.isEnabled = false
       addListItemButton.alpha = 0.5
-      
-        // print("ENTER PRESSED")
     }
-    
+  }
+  
 }
