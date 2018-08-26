@@ -70,6 +70,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                         <connections>
+                                            <action selector="userHasEnteredText:" destination="raK-QT-nFu" eventType="editingChanged" id="6EM-jF-t9S"/>
                                             <outlet property="delegate" destination="raK-QT-nFu" id="XTs-7i-JKX"/>
                                         </connections>
                                     </textField>

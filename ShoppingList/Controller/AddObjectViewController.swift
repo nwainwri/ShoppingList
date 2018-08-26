@@ -33,6 +33,19 @@ class AddObjectViewController: UIViewController, UITextFieldDelegate
   {
     super.viewDidLoad()
    // tapGestureRecognizer.addTarget(self, action: #selector(bottomsUp))
+    
+    // START -- below block at view load will disable buttons, need spot where it will reenable
+    addButton.isEnabled = false
+    addButton.alpha = 0.5
+    
+    subButton.isEnabled = false
+    subButton.alpha = 0.5
+    
+    addListItemButton.isEnabled = false
+    addListItemButton.alpha = 0.5
+    // END
+    
+    
     amountOfItemsLabel.text = "\(amount)"
     titleOfItemField.placeholder = "Enter the item"
   }
@@ -104,6 +117,25 @@ class AddObjectViewController: UIViewController, UITextFieldDelegate
   }
   //  END BLOCK -- CHARACTER LIMIT
   
+  //WHEN TEXTFIELD SELECTED; THEN ENABLE BUTTONS
+
+  @IBAction func userHasEnteredText(_ sender: UITextField) {
+    addButton.isEnabled = true
+    addButton.alpha = 1
+    
+    subButton.isEnabled = true
+    subButton.alpha = 1
+    
+    addListItemButton.isEnabled = true
+    addListItemButton.alpha = 1
+  
+  }
+  
+  
+
+  
+  
+  
   // START -- HAVE CLEAR BUTTON ON TEXTFIELD, RESET AMOUNT LABEL
   // https://stackoverflow.com/questions/11337961/when-clicking-on-uitextfields-clear-button-keyboard-is-disappearing-not-text
   func textFieldShouldClear(_ textField: UITextField) -> Bool {
@@ -121,6 +153,7 @@ class AddObjectViewController: UIViewController, UITextFieldDelegate
 //    //    let tempAmount = Int(amountOfItemsField.text!)
     
     guard let text = titleOfItemField.text, !text.isEmpty else {
+      
         return false
     }
   
@@ -128,6 +161,15 @@ class AddObjectViewController: UIViewController, UITextFieldDelegate
     //END GUARD STATEMENT -- does rest if it's not empty
     
     let itemToPassBack = ListItem()
+    
+    addButton.isEnabled = false
+    addButton.alpha = 0.5
+    
+    subButton.isEnabled = false
+    subButton.alpha = 0.5
+    
+    addListItemButton.isEnabled = false
+    addListItemButton.alpha = 0.5
     
     itemToPassBack.title = titleOfItemField.text!
     itemToPassBack.amount = Int32(amount)
@@ -167,7 +209,16 @@ class AddObjectViewController: UIViewController, UITextFieldDelegate
         amountOfItemsLabel.text = "1"
         amount = 1
         //  END CLEAR
-        
+      
+      addButton.isEnabled = false
+      addButton.alpha = 0.5
+      
+      subButton.isEnabled = false
+      subButton.alpha = 0.5
+      
+      addListItemButton.isEnabled = false
+      addListItemButton.alpha = 0.5
+      
         // print("ENTER PRESSED")
     }
     
