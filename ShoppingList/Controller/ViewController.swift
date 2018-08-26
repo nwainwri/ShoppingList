@@ -34,9 +34,7 @@ class ViewController:
         super.viewDidLoad()
         self.itemUITableView.allowsMultipleSelectionDuringEditing = false;
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-        
-      
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil) 
     }
     
     //MARK: - Keyboard
@@ -133,10 +131,27 @@ class ViewController:
         itemUITableView .reloadData()
         
     }
+
+    appData.sortEntireList()
+    itemUITableView .reloadData()
     
-    //  MARK: - Add, Edit, Delete, Move Item and Clear All
-    
-    func itemAdded(sentItem: ListItem)
+  }
+  
+  //  MARK: - Add, Edit, Delete, Move Item and Clear All
+  
+  func itemAdded(sentItem: ListItem)
+  {
+    appData.currentItemsArray.append(sentItem)
+    writeNewItem(addedItem: sentItem)
+    appData.sortEntireList()
+    itemUITableView.reloadData()
+  }
+  
+  
+  
+  @IBAction func showEditing(_ sender: UIButton)
+  {
+    if(self.itemUITableView.isEditing == true)
     {
         appData.currentItemsArray.append(sentItem)
         writeNewItem(addedItem: sentItem)

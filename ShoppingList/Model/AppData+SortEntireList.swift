@@ -9,27 +9,44 @@
 import Foundation
 
 extension AppData{
-  //currently sorts based on bool; will still need to sort based on that
-  // need to add sort method to also sort based on alphabet of title?
-  //
-  // or somehow track order it was initially put in first place.
+
+////  //below will sort by alphabet (title) then also .isCompleted BOOL
+//  func sortEntireList() {
+////    var tempArray = [ListItem]()
+//    var tempDoneItemArray = [ListItem]()
+//    var tempNotDoneItemArray = [ListItem]()
+//    // tempArray is entire table
+//    // break into two arrays, trueArray, and false Array, sort both by title, at end of func
+//    // APPEEND falseArray to true array; have that array be passed into currentArray
+//    for item in currentItemsArray {
+//      if (item.isCompleted == true) {
+//        tempDoneItemArray.append(item)
+////        tempArray.append(item)
+//      } else {
+////        tempArray.insert(item, at: 0)
+//        tempNotDoneItemArray.append(item)
+//      }
+//    }
+//    tempDoneItemArray = tempDoneItemArray.sorted { $0.title < $1.title }
+//    tempNotDoneItemArray = tempNotDoneItemArray.sorted { $0.title < $1.title }
+//    tempNotDoneItemArray.append(contentsOf: tempDoneItemArray)
+//    currentItemsArray = tempNotDoneItemArray
+//  }
   
-  // that would read the array
-  // get a current index of current indexspots
-  //
-  func sortEntireList() {
-    var tempArray = [ListItem]()
-    
-    for item in currentItemsArray {
-      if (item.isCompleted == true) {
-        tempArray.append(item)
-      } else {
-        tempArray.insert(item, at: 0)
+
+//  start -- SORTS BY isCompleted BOOL
+    func sortEntireList() {
+      var tempArray = [ListItem]()
+
+      for item in currentItemsArray {
+        if (item.isCompleted == true) {
+          tempArray.append(item)
+        } else {
+          tempArray.insert(item, at: 0)
+        }
       }
+      currentItemsArray = tempArray
     }
-    
-    currentItemsArray = tempArray
-  }
+ //  end -- SORTS BY isCompleted BOOL
   
-  
-}
+} // END -- AppData Extension
