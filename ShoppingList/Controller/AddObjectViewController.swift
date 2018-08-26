@@ -51,7 +51,7 @@ class AddObjectViewController:
     self.ListUIPickerView.dataSource = self
     changeButtonState(number: 0) // set buttons to disabled
     
-    addListItemViewBar.layer.cornerRadius = 10.00 // changes cornder radius for box holding addItem Elements
+    addListItemViewBar.layer.cornerRadius = 7.5 // changes cornder radius for box holding addItem Elements
     
     amountOfItemsLabel.text = "\(amount)"
     titleOfItemField.placeholder = "Enter the item"

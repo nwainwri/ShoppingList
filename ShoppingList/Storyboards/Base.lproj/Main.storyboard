@@ -164,6 +164,7 @@
                         <outlet property="bottomConstraint" destination="bH0-pd-Ep5" id="LVS-2x-AyA"/>
                         <outlet property="editUIButton" destination="UWR-fq-Oec" id="5VD-kg-Gwm"/>
                         <outlet property="itemUITableView" destination="0U6-io-Xa3" id="45m-Ha-Jeg"/>
+                        <outlet property="titleLabelViewBox" destination="duN-oE-iHh" id="lq3-u8-RXd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
