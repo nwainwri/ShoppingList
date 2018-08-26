@@ -114,6 +114,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addButton" destination="fkC-2b-fm6" id="v4o-hO-s35"/>
+                        <outlet property="addListItemButton" destination="2gV-eu-QaR" id="6Ne-CU-N5s"/>
                         <outlet property="amountOfItemsLabel" destination="2Yv-jI-PFB" id="Fhv-iI-1kh"/>
                         <outlet property="subButton" destination="cnx-8y-dH8" id="eAb-Vz-XEg"/>
                         <outlet property="tapGestureRecognizer" destination="p3y-XH-8SD" id="euv-l1-pfR"/>

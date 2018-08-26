@@ -22,6 +22,9 @@ class AddObjectViewController: UIViewController, UITextFieldDelegate
   @IBOutlet weak var addButton: UIButton!
   @IBOutlet weak var subButton: UIButton!
   
+  @IBOutlet weak var addListItemButton: UIButton!
+  
+  
   var amount: Int = 1
   
   /// END - OUTLETS HERE / AND OR PROPERTIES
