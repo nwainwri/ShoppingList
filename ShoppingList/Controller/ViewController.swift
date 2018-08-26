@@ -22,6 +22,7 @@ class ViewController:
   @IBOutlet weak var itemUITableView: UITableView!
   @IBOutlet weak var editUIButton: UIButton!
   
+  @IBOutlet weak var clearUIButton: UIButton!
   
   @IBOutlet weak var titleLabelViewBox: UIView!
   
@@ -30,11 +31,17 @@ class ViewController:
   var realmArray = [ListItem]()
   // need array property, mutable.
   
+
+  
+  
   override func viewDidLoad()
   {
     super.viewDidLoad()
     titleLabelViewBox.layer.cornerRadius = 7.5 // handles cornder radius of top bar (edit, title, clear are located)
     appData.sortEntireList() // sorts list at view load
+    topMenuButtons() // enables or disables buttons depending on if currentItemsArray returns if it's 'full' or 'empty'
+
+    
     
     
     
@@ -147,6 +154,7 @@ class ViewController:
     writeNewItem(addedItem: sentItem)
     appData.sortEntireList()
     itemUITableView.reloadData()
+    topMenuButtons() // enables or disables buttons depending on if currentItemsArray returns if it's 'full' or 'empty'
   }
   
   
@@ -174,6 +182,8 @@ class ViewController:
       self.itemUITableView.setEditing(true, animated: true)
       self.editUIButton.setTitle("Done", for: .normal)
     }
+    topMenuButtons() // enables or disables buttons depending on if currentItemsArray returns if it's 'full' or 'empty'
+
   }
   
   func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
@@ -191,8 +201,10 @@ class ViewController:
     appData.currentItemsArray.insert(movedObject, at: destinationIndexPath.row)
   }
   
+  
   @IBAction func clearItemList(_ sender: UIButton) {
     appData.currentItemsArray.removeAll()
+    topMenuButtons() // enables or disables buttons depending on if currentItemsArray returns if it's 'full' or 'empty'
     let realm = RLMRealm.default()
     realm.beginWriteTransaction()
     realm.deleteAllObjects()
@@ -266,7 +278,28 @@ class ViewController:
       print("\(error)")
     }
   }
+  
+  func topMenuButtons() {
+    // enables or disables buttons depending on if currentItemsArray returns if it's 'full' or 'empty'
+    if appData.currentItemsArray.isEmpty {
+      editUIButton.isEnabled = false
+      editUIButton.alpha = 0.5
+      clearUIButton.isEnabled = false
+      clearUIButton.alpha = 0.5
+    } else {
+      editUIButton.isEnabled = true
+      editUIButton.alpha = 1.0
+      clearUIButton.isEnabled = true
+      clearUIButton.alpha = 1.0
+    }
+  }
+  
+  
+  
+  
 }
+
+
 
 
 

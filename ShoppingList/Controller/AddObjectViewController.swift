@@ -9,24 +9,24 @@
 import UIKit
 
 class AddObjectViewController:
-    UIViewController,
-    UITextFieldDelegate,
-    UIPickerViewDataSource,
-    UIPickerViewDelegate
+  UIViewController,
+  UITextFieldDelegate,
+  UIPickerViewDataSource,
+  UIPickerViewDelegate
 {
-
-    
+  
+  
   // OUTLETS HERE / AND OR PROPERTIES
-    
-    @IBOutlet weak var ListUIPickerView: UIPickerView!
-    
+  
+  @IBOutlet weak var ListUIPickerView: UIPickerView!
+  
   weak var delegate: AddObjectViewControllerDelgate?
-    var listArray: [String] = ["Menu", "Save this list", "Add a new list", "My saved lists"]
-    var listPickerRow = Int ()
-    
-@IBOutlet var tapGestureRecognizer: UITapGestureRecognizer!
-
-    
+  var listArray: [String] = ["Menu", "Save this list", "Add a new list", "My saved lists"]
+  var listPickerRow = Int ()
+  
+  @IBOutlet var tapGestureRecognizer: UITapGestureRecognizer!
+  
+  
   //  var itemToPassBack = ListItem()
   
   @IBOutlet weak var amountOfItemsLabel: UILabel!
@@ -46,7 +46,7 @@ class AddObjectViewController:
   override func viewDidLoad()
   {
     super.viewDidLoad()
-   // tapGestureRecognizer.addTarget(self, action: #selector(bottomsUp))
+    // tapGestureRecognizer.addTarget(self, action: #selector(bottomsUp))
     self.ListUIPickerView.delegate = self
     self.ListUIPickerView.dataSource = self
     changeButtonState(number: 0) // set buttons to disabled
@@ -137,6 +137,7 @@ class AddObjectViewController:
   // START -- HAVE CLEAR BUTTON ON TEXTFIELD, RESET AMOUNT LABEL
   // https://stackoverflow.com/questions/11337961/when-clicking-on-uitextfields-clear-button-keyboard-is-disappearing-not-text
   func textFieldShouldClear(_ textField: UITextField) -> Bool {
+    changeButtonState(number: 0) // set buttons to disabled
     amountOfItemsLabel.text = "1"
     titleOfItemField.text = ""
     amount = 1
@@ -203,67 +204,67 @@ class AddObjectViewController:
     //  END CLEAR
     
     changeButtonState(number: 0) // set buttons to disabled
+  }
+  //  MARK: - Picker View
+  
+  func numberOfComponents(in pickerView: UIPickerView) -> Int {
+    return 1
+  } //columns needed
+  
+  func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    return listArray.count
+  }
+  
+  func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    return self.listArray[row]
+  }
+  
+  func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    let choice = self.listArray[row]
+    switch choice{
+    case "Menu":
+      print("Menu")
+    case "Save this list":
+      alertForMenuChoice(choice: choice)
+    case "Add a new list":
+      alertForMenuChoice(choice: choice)
+    default: print("load list")
     }
-    //  MARK: - Picker View
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    } //columns needed
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return listArray.count
+  }
+  
+  func alertForMenuChoice (choice:String){
+    var alert = UIAlertController()
+    if choice == "Save this list" {
+      alert = UIAlertController(title: "\(choice)", message: "What would you like to save your list as?", preferredStyle: .alert)
+      alert.addTextField { (textField) in
+        textField.text = ""
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Save", comment: "Default action"), style: .default))
+      }
     }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-            return self.listArray[row]
+    if choice == "Add a new list" {
+      alert = UIAlertController(title: "\(choice)", message: "What would you like to name your new list?", preferredStyle: .alert)
+      alert.addTextField { (textField) in
+        textField.text = ""
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Add", comment: "Default action"), style: .default))
+      }
+    }else{
+      print("Load list")
     }
-    
-        func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-            let choice = self.listArray[row]
-            switch choice{
-            case "Menu":
-                print("Menu")
-            case "Save this list":
-                alertForMenuChoice(choice: choice)
-            case "Add a new list":
-                alertForMenuChoice(choice: choice)
-            default: print("load list")
-            }
-    }
-
-    func alertForMenuChoice (choice:String){
-        var alert = UIAlertController()
-        if choice == "Save this list" {
-        alert = UIAlertController(title: "\(choice)", message: "What would you like to save your list as?", preferredStyle: .alert)
-        alert.addTextField { (textField) in
-                textField.text = ""
-         alert.addAction(UIAlertAction(title: NSLocalizedString("Save", comment: "Default action"), style: .default))
-        }
-        }
-        if choice == "Add a new list" {
-            alert = UIAlertController(title: "\(choice)", message: "What would you like to name your new list?", preferredStyle: .alert)
-            alert.addTextField { (textField) in
-                textField.text = ""
-                alert.addAction(UIAlertAction(title: NSLocalizedString("Add", comment: "Default action"), style: .default))
-        }
-        }else{
-            print("Load list")
-        }
-        self.present(alert, animated: true, completion: nil)
-    }
-
-    
-    //      addButton.isEnabled = false
-    //      addButton.alpha = 0.5
-    //
-    //      subButton.isEnabled = false
-    //      subButton.alpha = 0.5
-    //
-    //      addListItemButton.isEnabled = false
-    //      addListItemButton.alpha = 0.5
-    
-    // print("ENTER PRESSED")
- // }
+    self.present(alert, animated: true, completion: nil)
+  }
+  
+  
+  //      addButton.isEnabled = false
+  //      addButton.alpha = 0.5
+  //
+  //      subButton.isEnabled = false
+  //      subButton.alpha = 0.5
+  //
+  //      addListItemButton.isEnabled = false
+  //      addListItemButton.alpha = 0.5
+  
+  // print("ENTER PRESSED")
+  // }
   // FUNCTION JUST HANDLES THE BUTTON STATES, TO GREY OUT WHEN NOT ENABLED/ETC
   // number = 1 to get buttons 'on'
   // number = 0 to get buttons 'off'
@@ -288,5 +289,5 @@ class AddObjectViewController:
       addListItemButton.alpha = 0.5
     }
   }
-
+  
 }
