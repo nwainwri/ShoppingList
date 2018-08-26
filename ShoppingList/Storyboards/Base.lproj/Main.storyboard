@@ -142,6 +142,13 @@
                                     <segue destination="a1q-cw-dfL" kind="embed" identifier="toAddObjectViewController" id="bG1-zc-oGT"/>
                                 </connections>
                             </containerView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intialLaunchImageTEST" highlightedImage="intialLaunchImageTEST" translatesAutoresizingMaskIntoConstraints="NO" id="xOg-Lv-I5V">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="kbP-Iu-Dcb" appends="YES" id="nJY-eU-7ob"/>
+                                </connections>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.96862745098039216" blue="0.78823529411764703" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
@@ -153,10 +160,14 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="eA6-in-zfz" secondAttribute="top" constant="20" id="JIs-6W-i29"/>
                             <constraint firstItem="eA6-in-zfz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="KSG-08-Hvf"/>
                             <constraint firstItem="0U6-io-Xa3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="46" id="MGN-nu-Ovl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xOg-Lv-I5V" secondAttribute="bottom" id="SXs-n6-bBb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="xOg-Lv-I5V" secondAttribute="top" constant="20" id="Yw1-Gi-eLF"/>
                             <constraint firstItem="0U6-io-Xa3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Zx0-se-0Ea"/>
                             <constraint firstAttribute="bottom" secondItem="wSK-4M-YQ7" secondAttribute="bottom" constant="-275" id="bH0-pd-Ep5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xOg-Lv-I5V" secondAttribute="trailing" id="dxI-5P-DXr"/>
                             <constraint firstItem="duN-oE-iHh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="4" id="e5F-xH-h5j"/>
                             <constraint firstItem="0U6-io-Xa3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gPH-HY-ebj"/>
+                            <constraint firstItem="xOg-Lv-I5V" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ict-W8-y2Z"/>
                             <constraint firstItem="wSK-4M-YQ7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jzC-oB-Uvf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="duN-oE-iHh" secondAttribute="top" constant="-6" id="kOL-bs-eNO"/>
                             <constraint firstAttribute="bottom" secondItem="0U6-io-Xa3" secondAttribute="bottom" id="mmm-YW-fIY"/>
@@ -167,11 +178,17 @@
                         <outlet property="bottomConstraint" destination="bH0-pd-Ep5" id="LVS-2x-AyA"/>
                         <outlet property="clearUIButton" destination="CzV-5g-qH4" id="eC8-pG-Kz5"/>
                         <outlet property="editUIButton" destination="UWR-fq-Oec" id="5VD-kg-Gwm"/>
+                        <outlet property="intialLaunchImage" destination="xOg-Lv-I5V" id="JO7-RZ-smT"/>
                         <outlet property="itemUITableView" destination="0U6-io-Xa3" id="45m-Ha-Jeg"/>
                         <outlet property="titleLabelViewBox" destination="duN-oE-iHh" id="lq3-u8-RXd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="kbP-Iu-Dcb">
+                    <connections>
+                        <action selector="imageTappedWithSender:" destination="BYZ-38-t0r" id="jE6-ez-D5K"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-143.19999999999999" y="-58.020989505247378"/>
         </scene>
@@ -184,4 +201,7 @@
             <point key="canvasLocation" x="-1027" y="498"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="intialLaunchImageTEST" width="1242" height="2208"/>
+    </resources>
 </document>

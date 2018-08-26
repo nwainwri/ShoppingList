@@ -26,17 +26,49 @@ class ViewController:
   
   @IBOutlet weak var titleLabelViewBox: UIView!
   
+  
+  @IBOutlet weak var intialLaunchImage: UIImageView!
+  
+  
+  
   var appData = AppData()
   //  var appData = AppData()
   var realmArray = [ListItem]()
   // need array property, mutable.
   
+  
+  //FIRST LAUNCH TEST
+  let firstLaunch = FirstLaunch()
+  
+  @IBAction func imageTapped(sender: AnyObject) {
+    print("Image Tapped.")
+    intialLaunchImage.isHidden = true
+  }
 
+  //END -- FIRST LAUNCH TEST
   
   
   override func viewDidLoad()
   {
     super.viewDidLoad()
+    //FIRST LAUNCH TEST
+
+    if firstLaunch.isFirstLaunch {
+      print("LAUNCHED") // will only print if app first launched.
+      
+      intialLaunchImage.alpha = 1.0
+      
+      
+      // fyi for testing you'll need to delete app off simulator if you're wanting to test this function
+    } else {
+      intialLaunchImage.alpha = 0.0
+    }
+    
+
+    
+    
+    //END -- FIRST LAUNCH TEST
+
     titleLabelViewBox.layer.cornerRadius = 7.5 // handles cornder radius of top bar (edit, title, clear are located)
     appData.sortEntireList() // sorts list at view load
     topMenuButtons() // enables or disables buttons depending on if currentItemsArray returns if it's 'full' or 'empty'

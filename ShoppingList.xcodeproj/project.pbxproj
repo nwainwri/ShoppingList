@@ -25,6 +25,7 @@
 		F16F8273212F50AF00135448 /* AppData+AddToItemAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16F8272212F50AF00135448 /* AppData+AddToItemAmount.swift */; };
 		F16F8275212F50FD00135448 /* AppData+SubtractFromItemAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16F8274212F50FD00135448 /* AppData+SubtractFromItemAmount.swift */; };
 		F19C718621331F4100752C4C /* MaxLengthTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19C718521331F4100752C4C /* MaxLengthTextField.swift */; };
+		F19C718821332CE400752C4C /* ViewController+FirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19C718721332CE400752C4C /* ViewController+FirstLaunch.swift */; };
 		F1CA12B9212F7C9D000256C1 /* MyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CA12B8212F7C9D000256C1 /* MyProtocol.swift */; };
 		F1DA98BB212F31E50079105F /* AppData+RemoveItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DA98BA212F31E50079105F /* AppData+RemoveItem.swift */; };
 		F1DA98BD212F325D0079105F /* AppData+AddListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DA98BC212F325D0079105F /* AppData+AddListItem.swift */; };
@@ -82,6 +83,7 @@
 		F16F8272212F50AF00135448 /* AppData+AddToItemAmount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppData+AddToItemAmount.swift"; sourceTree = "<group>"; };
 		F16F8274212F50FD00135448 /* AppData+SubtractFromItemAmount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppData+SubtractFromItemAmount.swift"; sourceTree = "<group>"; };
 		F19C718521331F4100752C4C /* MaxLengthTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxLengthTextField.swift; sourceTree = "<group>"; };
+		F19C718721332CE400752C4C /* ViewController+FirstLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+FirstLaunch.swift"; sourceTree = "<group>"; };
 		F1CA12B8212F7C9D000256C1 /* MyProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProtocol.swift; sourceTree = "<group>"; };
 		F1DA98BA212F31E50079105F /* AppData+RemoveItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppData+RemoveItem.swift"; sourceTree = "<group>"; };
 		F1DA98BC212F325D0079105F /* AppData+AddListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppData+AddListItem.swift"; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				7DB8F96F212DE21000315B5B /* ViewController.swift */,
+				F19C718721332CE400752C4C /* ViewController+FirstLaunch.swift */,
 				7DB8F9A3212DEDAF00315B5B /* AddObjectViewController.swift */,
 				F19C718521331F4100752C4C /* MaxLengthTextField.swift */,
 				F1CA12B8212F7C9D000256C1 /* MyProtocol.swift */,
@@ -455,6 +458,7 @@
 				F1DA98C1212F32A90079105F /* AppData+SortEntireList.swift in Sources */,
 				F19C718621331F4100752C4C /* MaxLengthTextField.swift in Sources */,
 				F1DA98BB212F31E50079105F /* AppData+RemoveItem.swift in Sources */,
+				F19C718821332CE400752C4C /* ViewController+FirstLaunch.swift in Sources */,
 				F1DA98BF212F328C0079105F /* AppData+MarkListItem.swift in Sources */,
 				7DB8F970212DE21000315B5B /* ViewController.swift in Sources */,
 				F112073C212E174800AAB353 /* AppData.swift in Sources */,
