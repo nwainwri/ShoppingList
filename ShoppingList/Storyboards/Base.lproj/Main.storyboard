@@ -122,7 +122,6 @@
                                             <outlet property="amountUILabel" destination="XCC-TJ-ln8" id="DCv-vu-yic"/>
                                             <outlet property="itemUILabel" destination="yCy-S6-3BL" id="sdM-zt-lTh"/>
                                             <outlet property="markOffBar" destination="JqI-Jp-6xv" id="sIP-aw-ie0"/>
-                                            <outletCollection property="gestureRecognizers" destination="T1f-OF-TcT" appends="YES" id="J9L-3t-Jh2"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

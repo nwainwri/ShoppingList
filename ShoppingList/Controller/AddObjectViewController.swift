@@ -37,6 +37,7 @@ class AddObjectViewController:
   
   @IBOutlet weak var addListItemButton: UIButton!
   
+  @IBOutlet weak var addListItemViewBar: UIView!
   
   var amount: Int = 1
   
@@ -49,6 +50,8 @@ class AddObjectViewController:
     self.ListUIPickerView.delegate = self
     self.ListUIPickerView.dataSource = self
     changeButtonState(number: 0) // set buttons to disabled
+    
+    addListItemViewBar.layer.cornerRadius = 10.00 // changes cornder radius for box holding addItem Elements
     
     amountOfItemsLabel.text = "\(amount)"
     titleOfItemField.placeholder = "Enter the item"
