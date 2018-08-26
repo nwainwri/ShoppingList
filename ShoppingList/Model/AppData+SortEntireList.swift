@@ -21,7 +21,7 @@ extension AppData{
   // sorts by title/alphabet... need to add second condiaton to sort by bool
   
   
-  //ALMOST THERE
+//  //ALMOST THERE
   func sortEntireList() {
 //    var tempArray = [ListItem]()
     var tempDoneItemArray = [ListItem]()
@@ -45,43 +45,20 @@ extension AppData{
   }
   
   
-//  //ALMOST THERE
-//  func sortEntireList() {
-//    var tempArray = [ListItem]()
-//
-//    tempArray.sorted { $0.title < $1.title }
-//
-//    for item in currentItemsArray {
-//      if (item.isCompleted == true) {
-//        print("TEST TRUE:      \(item.title)")
-//
-//        tempArray.append(item)
-//      } else {
-//        tempArray.insert(item, at: 0)
-//        print("TEST FALSE:     \(item.title)")
-//      }
-//    }
-//    currentItemsArray = tempArray
-//  }
-  
-  
-  
-  
-  
+
   //  UNTOUCHED FUNC INCASE THINGS GO SIDEWAYS
-  //  func sortEntireList() {
-  //    var tempArray = [ListItem]()
-  //
-  //    for item in currentItemsArray {
-  //      if (item.isCompleted == true) {
-  //        tempArray.append(item)
-  //      } else {
-  //        tempArray.insert(item, at: 0)
-  //      }
-  //    }
-  //
-  //    currentItemsArray = tempArray
-  //  }
+//    func sortEntireList() {
+//      var tempArray = [ListItem]()
+//
+//      for item in currentItemsArray {
+//        if (item.isCompleted == true) {
+//          tempArray.append(item)
+//        } else {
+//          tempArray.insert(item, at: 0)
+//        }
+//      }
+//      currentItemsArray = tempArray
+//    }
   
   
 } // END -- AppData Extension

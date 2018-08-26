@@ -29,7 +29,13 @@ class ViewController:
   
   override func viewDidLoad()
   {
+    
+
     super.viewDidLoad()
+    
+    appData.sortEntireList()
+    
+    
     self.itemUITableView.allowsMultipleSelectionDuringEditing = false;
     NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
