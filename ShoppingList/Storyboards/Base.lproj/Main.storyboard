@@ -142,7 +142,7 @@
                                     <segue destination="a1q-cw-dfL" kind="embed" identifier="toAddObjectViewController" id="bG1-zc-oGT"/>
                                 </connections>
                             </containerView>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intialLaunchImageTEST" highlightedImage="intialLaunchImageTEST" translatesAutoresizingMaskIntoConstraints="NO" id="xOg-Lv-I5V">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intialLaunchImage" translatesAutoresizingMaskIntoConstraints="NO" id="xOg-Lv-I5V">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -180,6 +180,7 @@
                         <outlet property="editUIButton" destination="UWR-fq-Oec" id="5VD-kg-Gwm"/>
                         <outlet property="intialLaunchImage" destination="xOg-Lv-I5V" id="JO7-RZ-smT"/>
                         <outlet property="itemUITableView" destination="0U6-io-Xa3" id="45m-Ha-Jeg"/>
+                        <outlet property="mainViewListTitle" destination="2jP-fO-OSu" id="eQd-po-3T3"/>
                         <outlet property="titleLabelViewBox" destination="duN-oE-iHh" id="lq3-u8-RXd"/>
                     </connections>
                 </viewController>
@@ -202,6 +203,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="intialLaunchImageTEST" width="1242" height="2208"/>
+        <image name="intialLaunchImage" width="621" height="1104"/>
     </resources>
 </document>

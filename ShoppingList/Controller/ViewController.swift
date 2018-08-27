@@ -29,6 +29,7 @@ class ViewController:
   
   @IBOutlet weak var intialLaunchImage: UIImageView!
   
+  @IBOutlet weak var mainViewListTitle: UIButton!
   
   
   var appData = AppData()
@@ -51,6 +52,10 @@ class ViewController:
   override func viewDidLoad()
   {
     super.viewDidLoad()
+    
+    //MARK: mainViewListTitle is disabled until list function finisehd
+    mainViewListTitle.isHidden = true
+    
     //FIRST LAUNCH TEST
     
     if firstLaunch.isFirstLaunch {
