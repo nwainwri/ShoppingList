@@ -21,7 +21,7 @@ class AddObjectViewController:
   @IBOutlet weak var ListUIPickerView: UIPickerView!
   
   weak var delegate: AddObjectViewControllerDelgate?
-  var listArray: [String] = ["Menu", "Save this list", "Add a new list", "My saved lists"]
+  var listArray: [String] = ["Menu", "Save this list", "Add a new list", "-------", "Jamie's List", "Nathan's List", "Mike's List"]
   var listPickerRow = Int ()
   
   @IBOutlet var tapGestureRecognizer: UITapGestureRecognizer!
