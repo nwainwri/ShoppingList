@@ -5,6 +5,8 @@
 //  Created by Nathan Wainwright on 2018-08-26.
 //  Copyright © 2018 Jamie. All rights reserved.
 //
+//WHERE I GOT INFORMATION TO ENABLE THIS METHOD -- nathan
+//URL:: https://mobikul.com/useful-uitextfield-extensions/
 
 import UIKit
 

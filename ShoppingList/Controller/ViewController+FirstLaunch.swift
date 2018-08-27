@@ -5,6 +5,10 @@
 //  Created by Nathan Wainwright on 2018-08-26.
 //  Copyright © 2018 Jamie. All rights reserved.
 //
+//WHERE I GOT THE INFORMATION TO ENABLE THIS METHOD -- nathan 
+//URL:: https://medium.com/anysuggestion/detecting-the-first-launch-of-the-ios-application-the-wrong-and-the-right-way-78b0605bd8b2
+
+
 
 import Foundation
 

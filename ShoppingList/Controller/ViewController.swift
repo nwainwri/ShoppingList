@@ -41,10 +41,10 @@ class ViewController:
   let firstLaunch = FirstLaunch()
   
   @IBAction func imageTapped(sender: AnyObject) {
-//    print("Image Tapped.")
+    //    print("Image Tapped.")
     intialLaunchImage.isHidden = true
   }
-
+  
   //END -- FIRST LAUNCH TEST
   
   
@@ -52,9 +52,10 @@ class ViewController:
   {
     super.viewDidLoad()
     //FIRST LAUNCH TEST
-
+    
     if firstLaunch.isFirstLaunch {
-      print("LAUNCHED: This will ONLY print once.") // will only print if app first launched.
+      // FYI IF TESTING LAUNCH METHOD, YOU WILL NEED TO REDELETE APP ON SIM TO RE-CHECK LAUNCH ITEMS
+      //print("LAUNCHED: This will ONLY print once.") // will only print if app first launched.
       
       intialLaunchImage.alpha = 1.0
       
@@ -64,22 +65,22 @@ class ViewController:
       intialLaunchImage.alpha = 0.0
     }
     
-
-    //JUST FOR TESTING DATESTAMP
     
-    var testThingForNow = ListItem(title: "just to test date", andAmount: 0)
-    print(testThingForNow)
-    testThingForNow.dateStamp = NSDate() as Date?
-    print("LET'S SEE IF WE GET A DATE BELOW :: 1")
-    print(testThingForNow.dateStamp)
-    // END -- TEST
+    //    //JUST FOR TESTING DATESTAMP
+    //
+    //    var testThingForNow = ListItem(title: "just to test date", andAmount: 0)
+    //    print(testThingForNow)
+    //    testThingForNow.dateStamp = NSDate() as Date?
+    //    print("LET'S SEE IF WE GET A DATE BELOW :: 1")
+    //    print(testThingForNow.dateStamp)
+    //    // END -- TEST
     
     //END -- FIRST LAUNCH TEST
-
+    
     titleLabelViewBox.layer.cornerRadius = 7.5 // handles cornder radius of top bar (edit, title, clear are located)
     appData.sortEntireList() // sorts list at view load
     topMenuButtons() // enables or disables buttons depending on if currentItemsArray returns if it's 'full' or 'empty'
-
+    
     
     
     
@@ -222,7 +223,7 @@ class ViewController:
       self.editUIButton.setTitle("Done", for: .normal)
     }
     topMenuButtons() // enables or disables buttons depending on if currentItemsArray returns if it's 'full' or 'empty'
-
+    
   }
   
   func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
@@ -233,6 +234,10 @@ class ViewController:
                            with: UITableViewRowAnimation.top)
     }
   }
+  
+  
+  //MARK: where table view rows are dragged/moved
+  
   
   func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
     let movedObject = appData.currentItemsArray[sourceIndexPath.row]
@@ -312,7 +317,7 @@ class ViewController:
     
     //START -- current spot
     newItem.currentSpot = Int32(appData.currentItemsArray.count)
-    print("THIS:\(newItem.currentSpot)")
+//    print("THIS:\(newItem.currentSpot)") // test to ensure newitem is getting a 'spot'
     //END --
     
     
