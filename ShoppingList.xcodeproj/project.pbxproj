@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		50376DABAA0B005123ABEE23 /* Pods_ShoppingListUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27A636DFE87FE2A2D50C3EDB /* Pods_ShoppingListUITests.framework */; };
-		7D6D8B1621333DC900A11BEB /* ShoppingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6D8B1521333DC900A11BEB /* ShoppingList.swift */; };
+		7D6D8B19213360A500A11BEB /* ShoppingList.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6D8B18213360A500A11BEB /* ShoppingList.m */; };
 		7D8CA2AF212E4B88005AF67D /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8CA2AE212E4B88005AF67D /* ItemTableViewCell.swift */; };
 		7DB8F96E212DE21000315B5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB8F96D212DE21000315B5B /* AppDelegate.swift */; };
 		7DB8F970212DE21000315B5B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB8F96F212DE21000315B5B /* ViewController.swift */; };
@@ -55,7 +55,8 @@
 		34B4DE8D5E126674B9336BA9 /* Pods-ShoppingListTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingListTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShoppingListTests/Pods-ShoppingListTests.debug.xcconfig"; sourceTree = "<group>"; };
 		445B5815400FA85F51411F95 /* Pods-ShoppingListTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingListTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShoppingListTests/Pods-ShoppingListTests.release.xcconfig"; sourceTree = "<group>"; };
 		56549D1CA079DABA2206EAB6 /* Pods-ShoppingListUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShoppingListUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShoppingListUITests/Pods-ShoppingListUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		7D6D8B1521333DC900A11BEB /* ShoppingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingList.swift; sourceTree = "<group>"; };
+		7D6D8B17213360A500A11BEB /* ShoppingList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShoppingList.h; sourceTree = "<group>"; };
+		7D6D8B18213360A500A11BEB /* ShoppingList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShoppingList.m; sourceTree = "<group>"; };
 		7D8CA2AE212E4B88005AF67D /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		7DB8F96A212DE21000315B5B /* ShoppingList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DB8F96D212DE21000315B5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -224,8 +225,9 @@
 				F16F8274212F50FD00135448 /* AppData+SubtractFromItemAmount.swift */,
 				F1120738212DEA4F00AAB353 /* ListItem.h */,
 				F1120739212DEA4F00AAB353 /* ListItem.m */,
+				7D6D8B17213360A500A11BEB /* ShoppingList.h */,
+				7D6D8B18213360A500A11BEB /* ShoppingList.m */,
 				F1120737212DEA4F00AAB353 /* ShoppingList-Bridging-Header.h */,
-				7D6D8B1521333DC900A11BEB /* ShoppingList.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -462,12 +464,12 @@
 				7DB8F970212DE21000315B5B /* ViewController.swift in Sources */,
 				F112073C212E174800AAB353 /* AppData.swift in Sources */,
 				F1DA98BD212F325D0079105F /* AppData+AddListItem.swift in Sources */,
-				7D6D8B1621333DC900A11BEB /* ShoppingList.swift in Sources */,
 				F1CA12B9212F7C9D000256C1 /* MyProtocol.swift in Sources */,
 				7D8CA2AF212E4B88005AF67D /* ItemTableViewCell.swift in Sources */,
 				7DB8F96E212DE21000315B5B /* AppDelegate.swift in Sources */,
 				F112073A212DEA4F00AAB353 /* ListItem.m in Sources */,
 				F16F8273212F50AF00135448 /* AppData+AddToItemAmount.swift in Sources */,
+				7D6D8B19213360A500A11BEB /* ShoppingList.m in Sources */,
 				7DB8F9A4212DEDAF00315B5B /* AddObjectViewController.swift in Sources */,
 				F16F8275212F50FD00135448 /* AppData+SubtractFromItemAmount.swift in Sources */,
 			);

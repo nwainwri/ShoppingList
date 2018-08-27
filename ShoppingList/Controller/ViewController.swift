@@ -40,14 +40,23 @@ class ViewController:
     titleLabelViewBox.layer.cornerRadius = 7.5 // handles cornder radius of top bar (edit, title, clear are located)
     appData.sortEntireList() // sorts list at view load
     topMenuButtons() // enables or disables buttons depending on if currentItemsArray returns if it's 'full' or 'empty'
-
-    
-    
-    
-    
     self.itemUITableView.allowsMultipleSelectionDuringEditing = false;
     NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+//    let shoppingList = ShoppingList()
+//    let realm = RLMRealm.default()
+//    realm.beginWriteTransaction()
+//    realm.delete(shoppingList)
+//    do                         ---------------doesn't work. Was trying to delete on view did load for testing (see below) but can't find the item to delete in Realm
+//    {
+//        try realm.commitWriteTransactionWithoutNotifying([])
+//    }
+//    catch let error
+//    {
+//        print("\(error)")
+//    }
+//
+//    saveCurrentList(listName: "Test", currentArray: appData.currentItemsArray) --------during testing Realm sees this as editing the name without writing, crash
   }
   
   //MARK: - Keyboard
@@ -295,12 +304,12 @@ class ViewController:
   }
     
     func saveCurrentList (listName: (String), currentArray: (Array<ListItem>)){
-       
-        let shoppingList = ShoppingList()
-        shoppingList.listName = listName
-        for index in 0..<currentArray.count{
-           shoppingList.shoppingList.add(currentArray[index])
-        }
+        
+        //this works
+        let shoppingList:ShoppingList = ShoppingList()
+        shoppingList.name = listName
+        for object in currentArray{
+            shoppingList.rlmArray.add(object)
         let realm = RLMRealm.default()
         realm.beginWriteTransaction()
         realm.add(shoppingList)
@@ -313,14 +322,12 @@ class ViewController:
             print("\(error)")
         }
     }
+    }
     
     func saveNewList (listName: (String)){
         
     }
-  
-  
-  
-  
+
 }
 
 
