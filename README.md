@@ -1,12 +1,7 @@
 # ShoppingList
 Midterm Assignment for Lighthouse Labs iOS Developer Bootcamp
 
-| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
-
-![Alt text](../ShoppingList/blob/master/blankScreen.png?raw=true "Blank Screen")
+![Alt text](https://github.com/nwainwri/ShoppingList/blob/master/blankScreen.png?raw=true "Blank Screen")
 
 ![Alt text](https://github.com/nwainwri/ShoppingList/blob/master/editScreen.png?raw=true "Editing Screen")
 
