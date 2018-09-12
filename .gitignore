@@ -76,3 +76,6 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+
+# Mac Metadata files - removes .DS_Store files from git repo.
+.DS_Store
