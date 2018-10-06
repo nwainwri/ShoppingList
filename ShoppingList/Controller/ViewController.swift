@@ -322,7 +322,7 @@ class ViewController:
     
     //START -- current spot
     newItem.currentSpot = Int32(appData.currentItemsArray.count)
-//    print("THIS:\(newItem.currentSpot)") // test to ensure newitem is getting a 'spot'
+    //    print("THIS:\(newItem.currentSpot)") // test to ensure newitem is getting a 'spot'
     //END --
     
     

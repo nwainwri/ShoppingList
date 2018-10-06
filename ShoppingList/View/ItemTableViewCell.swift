@@ -9,27 +9,22 @@
 import UIKit
 
 class ItemTableViewCell: UITableViewCell {
-    
-    @IBOutlet weak var itemUILabel: UILabel!
-    
-    @IBOutlet weak var amountUILabel: UILabel!
   
-  //TEST FOR 'MARK OFF'
+  @IBOutlet weak var itemUILabel: UILabel!
+  
+  @IBOutlet weak var amountUILabel: UILabel!
   
   
   @IBOutlet weak var markOffBar: UIView!
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    // Initialization code
+  }
   
+  override func setSelected(_ selected: Bool, animated: Bool) {
+    super.setSelected(selected, animated: animated)
+    
+    // Configure the view for the selected state
+  }
   
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }

@@ -9,10 +9,10 @@
 import Foundation
 
 extension AppData{
-
-////  //below will sort by alphabet (title) then also .isCompleted BOOL
+  
+  ////  //below will sort by alphabet (title) then also .isCompleted BOOL
   func sortEntireList() {
-//    var tempArray = [ListItem]()
+    //    var tempArray = [ListItem]()
     var tempDoneItemArray = [ListItem]()
     var tempNotDoneItemArray = [ListItem]()
     // tempArray is entire table
@@ -21,9 +21,9 @@ extension AppData{
     for item in currentItemsArray {
       if (item.isCompleted == true) {
         tempDoneItemArray.append(item)
-//        tempArray.append(item)
+        //        tempArray.append(item)
       } else {
-//        tempArray.insert(item, at: 0)
+        //        tempArray.insert(item, at: 0)
         tempNotDoneItemArray.append(item)
       }
     }
@@ -36,23 +36,23 @@ extension AppData{
       
     }
     
-
+    
   }
   
-
-////  start -- SORTS BY isCompleted BOOL
-//    func sortEntireList() {
-//      var tempArray = [ListItem]()
-//
-//      for item in currentItemsArray {
-//        if (item.isCompleted == true) {
-//          tempArray.append(item)
-//        } else {
-//          tempArray.insert(item, at: 0)
-//        }
-//      }
-//      currentItemsArray = tempArray
-//    }
-// //  end -- SORTS BY isCompleted BOOL
+  
+  ////  start -- SORTS BY isCompleted BOOL
+  //    func sortEntireList() {
+  //      var tempArray = [ListItem]()
+  //
+  //      for item in currentItemsArray {
+  //        if (item.isCompleted == true) {
+  //          tempArray.append(item)
+  //        } else {
+  //          tempArray.insert(item, at: 0)
+  //        }
+  //      }
+  //      currentItemsArray = tempArray
+  //    }
+  // //  end -- SORTS BY isCompleted BOOL
   
 } // END -- AppData Extension

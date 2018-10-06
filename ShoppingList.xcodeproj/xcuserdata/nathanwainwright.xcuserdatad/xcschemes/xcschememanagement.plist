@@ -7,7 +7,7 @@
 		<key>ShoppingList.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>4</integer>
+			<integer>6</integer>
 		</dict>
 		<key>ShoppingListTests.xcscheme</key>
 		<dict>
@@ -23,6 +23,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>7DB8F969212DE21000315B5B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7DB8F97D212DE21100315B5B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
